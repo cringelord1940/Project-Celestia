@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@libs/*": ["libs/*"],
+      "@common": ["libs/common/src"],
+      "@common/*": ["libs/common/src/*"],
+      "@stargate/*": ["apps/stargate/src/*"],
+      "@stella/*": ["apps/stella/src/*"],
+      "@interlink/*": ["apps/interlink/src/*"],
+      "@astra/*": ["apps/astra/src/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["dist", "test", "**/*spec.ts"]
+}

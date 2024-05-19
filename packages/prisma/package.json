@@ -1,0 +1,36 @@
+{
+  "name": "@nexel/prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:generate:acc": "prisma generate --accelerate",
+    "db:push": "prisma db push",
+    "db-studio": "prisma studio",
+    "db": "pnpm db:generate && pnpm db:push",
+    "build": "tsc"
+  },
+  "prisma": {
+    "schema": "schema/schema.prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^10.3.8",
+    "@prisma/client": "^5.14.0",
+    "@prisma/extension-accelerate": "^1.0.0",
+    "graphql": "^16.8.1",
+    "nexus-prisma": "^2.0.5",
+    "prisma-graphql-type-decimal": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "prisma": "^5.14.0",
+    "prisma-dbml-generator": "^0.12.0",
+    "prisma-nestjs-graphql": "^20.0.2",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  }
+}

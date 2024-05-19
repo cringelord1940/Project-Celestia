@@ -1,0 +1,61 @@
+{
+  "name": "@celestia/terra",
+  "version": "2024.3.13",
+  "private": true,
+  "homepage": "https://terra.theiceji.com",
+  "scripts": {
+    "dev": "next dev -p 8080",
+    "build": "next build",
+    "start": "next start -p 8080",
+    "deploy": "yarn db && yarn build",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze-b": "cross-env BUNDLE_ANALYZE=both next build"
+  },
+  "yarn-upgrade-all": {
+    "ignore": [
+      "@tanstack/react-query"
+    ]
+  },
+  "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.7",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@juggle/resize-observer": "^3.4.0",
+    "@nexel/cosmos": "workspace:*",
+    "@nexel/nextjs": "workspace:*",
+    "@nexel/prisma": "workspace:*",
+    "@next/third-parties": "^14.2.3",
+    "@t3-oss/env-nextjs": "^0.10.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.0",
+    "graphql": "^16.8.1",
+    "graphql-request": "^7.0.1",
+    "million": "^3.0.6",
+    "next": "^14.2.3",
+    "next-share": "^0.27.0",
+    "nprogress": "^0.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.10.2",
+    "webpack": "^5.91.0",
+    "zod": "^3.23.8",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
+    "@types/node": "^20.12.12",
+    "@types/nprogress": "^0.2.3",
+    "@types/react": "^18.3.2",
+    "autoprefixer": "^10.4.19",
+    "file-loader": "^6.2.0",
+    "next-compose-plugins": "^2.2.1",
+    "postcss": "^8.4.38",
+    "postcss-nesting": "^12.1.4",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "url-loader": "^4.1.1",
+    "yarn-upgrade-all": "^0.7.2"
+  }
+}

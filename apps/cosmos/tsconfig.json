@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@aurora/*": ["aurora/*"],
+      "@aurora": ["aurora"],
+      "@app": ["src/app"],
+      "@app/*": ["src/app/*"],
+      "@config": ["global/config"],
+      "@routes": ["global/config/routes.ts"],
+      "@env": ["global/env.mjs"],
+      "@constants": ["global/constants"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@backend": ["backend"],
+      "@backend/*": ["backend/*"],
+      "@trpc": ["backend/trpc/client"],
+      "@types": ["types"],
+      "public/*": ["public/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

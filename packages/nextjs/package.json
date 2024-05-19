@@ -1,0 +1,33 @@
+{
+  "name": "@nexel/nextjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@nexel/prisma": "workspace:*",
+    "@sentry/nextjs": "^8.0.0",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "js-cookie": "^3.0.5",
+    "next": "^14.2.3",
+    "nprogress": "^0.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-toastify": "^10.0.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20.12.12",
+    "@types/nprogress": "^0.2.3",
+    "@types/react": "^18.3.2",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  }
+}

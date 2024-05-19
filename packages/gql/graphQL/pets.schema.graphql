@@ -1,0 +1,10 @@
+type Pet {
+  id: Int!
+  name: String!
+  type: String
+}
+
+type Query {
+  pets: [Pet!]!
+  pet(id: Int!): Pet
+}

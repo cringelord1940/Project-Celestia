@@ -1,0 +1,63 @@
+{
+  "name": "celestia-main",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jirayu-ninl/Celestia-Main.git"
+  },
+  "author": "Jirayu Ninlapun",
+  "bugs": {
+    "url": "https://github.com/Jirayu-ninl/Celestia-Main/issues"
+  },
+  "scripts": {
+    "eslint": "eslint --fix \"./apps/**/**/**/**/*.{js,ts,jsx,tsx}\" --ext jsconfig.json",
+    "prettier": "prettier --write \"./apps/**/**/**/**/*.{js,ts,jsx,tsx}\"",
+    "format": "yarn prettier && yarn eslint",
+    "app:terra": "dotenv -- pnpm --filter @celestia/terra",
+    "app:cosmos": "dotenv -- pnpm --filter @celestia/cosmos",
+    "app:nexus": "dotenv -- pnpm --filter @celestia/nexus",
+    "app:nebula": "dotenv -- pnpm --filter @celestia/nebula",
+    "app:test": "dotenv -- pnpm --filter @celestia/test",
+    "apps": "dotenv -- pnpm --filter=\"./apps/*\"",
+    "servers": "dotenv -- pnpm --filter @celestia/server",
+    "pre:clean": "node scripts/clean.build.pkg",
+    "pre:db": "dotenv -- pnpm --filter @nexel/prisma db",
+    "pre:gql": "pnpm --filter @nexel/gql gql",
+    "pre:build": "pnpm -r --filter=\"./packages/*\" build",
+    "pre": "pnpm run \"/^pre:.*/\"",
+    "dev:app": "dotenv -- pnpm -r --filter=\"./apps/*\" run dev",
+    "dev:servers": "dotenv -- pnpm -r --filter=\"./servers/*\" run dev",
+    "dev": "dotenv -- pnpm run \"/^dev:.*/\"",
+    "build:app": "dotenv -- pnpm -r --filter=\"./apps/*\" run build",
+    "build:servers": "dotenv -- pnpm -r --filter=\"./servers/*\" run build",
+    "build": "dotenv -- pnpm run \"/^build:.*/\"",
+    "clean:build": "node scripts/clean.build.prod",
+    "clean:node": "node scripts/clean.node",
+    "clean": "pnpm run \"/^clean:.*/\""
+  },
+  "keywords": [],
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^9.2.0",
+    "eslint-config-next": "^14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "glob": "^10.3.15",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20.11.0",
+    "pnpm": ">=8.15.5"
+  }
+}
