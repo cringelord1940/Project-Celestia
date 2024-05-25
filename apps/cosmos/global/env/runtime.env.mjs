@@ -5,7 +5,7 @@
 
 export const runtimeEnv = {
   // ** ENVIRONMENT
-  NODE_ENV: process.env.NODE_ENV,
+  // NODE_ENV: process.env.NODE_ENV,
   NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   TOKEN: process.env.TOKEN,

@@ -7,14 +7,12 @@ import { theme } from '@config'
 const LineEdge = ({
   href,
   text,
-  _dark = true,
   classParent,
   classChild,
   isPrimary = false,
 }: {
   href: string
   text: string
-  _dark?: boolean
   classParent?: string
   classChild?: string
   isPrimary?: boolean

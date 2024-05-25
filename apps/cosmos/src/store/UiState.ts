@@ -48,6 +48,12 @@ export type ScrollState = {
   scrollY: MotionValue<number> | undefined
 }
 
+type OnScrollFunctionProps = {
+  pageHeight: number
+  motionValue: MotionValue<string>
+  scrollY: MotionValue<number>
+}
+
 export interface UiState {
   dark: boolean
   setDark: (dark: boolean) => void
@@ -69,6 +75,7 @@ export interface UiState {
   audio: boolean
   setAudio: (audio: boolean) => void
   onToggleAudio: () => void
-  scrollState: ScrollState | undefined
-  setScrollState: (state: ScrollState | undefined) => void
+  scroll: ScrollState | undefined
+  setScroll: (state: ScrollState | undefined) => void
+  onScroll: (value: OnScrollFunctionProps) => void
 }

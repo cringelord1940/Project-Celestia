@@ -1,0 +1,6 @@
+export { WebProjectTemplate } from './web'
+export { AppProjectTemplate } from './app'
+export { DesktopAppProjectTemplate } from './desktopApp'
+export { ProductProjectTemplate } from './product'
+export { BrandingProjectTemplate } from './branding'
+export { MovieProjectTemplate } from './movie'

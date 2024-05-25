@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { UI } from '@global/store'
-import { SetNavStateWithRoutes } from '@aurora/views/state'
+import { SetNavStateWithRoutes } from '@global/func/state'
 import { FreeTimeItems } from '@contents/pages/about'
-import { PageAboutAnimation as animConf } from '@global/config/defineAnimationConfig'
+import { PageAboutAnimation as animConf } from '@global/config/config.animation'
 import { about } from './components'
 
 const Client = () => {
@@ -30,7 +30,7 @@ const Client = () => {
       />
       {Page === 2 && <FreeTime data={FreeTimeItems} animConf={animConf} />}
       {!(Page === 2) && (
-        <div className='m-container mx-auto w-screen items-start overflow-hidden px-4 sm:container sm:px-0 xxl:w-[1440px]'>
+        <div className='h-full mx-auto w-screen items-start overflow-hidden px-4 sm:container sm:px-0 xxl:w-[1440px]'>
           {Page === 0 && <Hero />}
           {Page === 1 && <Facts animConf={animConf} _dark={_dark} />}
           {Page === 3 && <CTA animConf={animConf} _dark={_dark} />}

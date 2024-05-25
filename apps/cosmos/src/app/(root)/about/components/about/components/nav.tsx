@@ -33,20 +33,20 @@ const Nav = ({
       variants={parent(0.3)}
       initial='hidden'
       animate='show'
-      className='fixed bottom-24 flex w-screen flex-col justify-center md:bottom-0 md:left-4 md:h-screen md:w-auto xxl:left-8'
+      className='xxl:left-8 fixed bottom-24 flex w-screen flex-col justify-center md:bottom-0 md:left-4 md:h-screen md:w-auto'
     >
       <div className='flex flex-row items-center justify-center md:flex-col'>
         <motion.div
           variants={children}
           onClick={() => PageHandler('decrease')}
-          className='Anim AnimOpacity-40 flex h-8 w-8 items-center justify-center rounded-full border-2 border-black bg-black/20 backdrop-blur-md backdrop-filter dark:border-white dark:bg-white/20 md:h-12 md:w-12 xxl:h-16 xxl:w-16'
+          className='Anim AnimOpacity-40 xxl:h-16 xxl:w-16 flex h-8 w-8 items-center justify-center rounded-full border-2 border-black bg-black/20 backdrop-blur-md backdrop-filter md:h-12 md:w-12 dark:border-white dark:bg-white/20'
         >
           <Arrow left />
         </motion.div>
         <motion.div
           variants={children}
           onClick={() => PageHandler('increase')}
-          className='Anim AnimOpacity-40 ml-6 flex h-8 w-8 items-center justify-center rounded-full border-2 border-black bg-black/20 backdrop-blur-md backdrop-filter dark:border-white dark:bg-white/20 md:ml-0 md:mt-3 md:h-12 md:w-12 xxl:h-16 xxl:w-16'
+          className='Anim AnimOpacity-40 xxl:h-16 xxl:w-16 ml-6 flex h-8 w-8 items-center justify-center rounded-full border-2 border-black bg-black/20 backdrop-blur-md backdrop-filter md:ml-0 md:mt-3 md:h-12 md:w-12 dark:border-white dark:bg-white/20'
         >
           <Arrow />
         </motion.div>
@@ -56,7 +56,7 @@ const Nav = ({
         transition={{ delay: 1 }}
         className='flex items-center justify-center pt-4 md:flex-col md:pt-0'
       >
-        <div className='hidden h-16 bg-black dark:bg-white md:relative md:mx-auto md:my-12 md:block md:rotate-0 xxl:my-16'>
+        <div className='xxl:my-16 hidden h-16 bg-black md:relative md:mx-auto md:my-12 md:block md:rotate-0 dark:bg-white'>
           <motion.div
             initial={{ height: 16 }}
             exit={{ height: 16 }}

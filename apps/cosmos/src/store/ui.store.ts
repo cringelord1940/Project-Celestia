@@ -31,6 +31,7 @@ export const useUiState = create<UiState>((set, get) => ({
   audio: false,
   setAudio: (audio) => set({ audio: audio }),
   onToggleAudio: () => set({ audio: !get().audio }),
-  scrollState: undefined,
-  setScrollState: (state) => {},
+  scroll: undefined,
+  setScroll: (state) => {},
+  onScroll: ({ pageHeight, motionValue, scrollY }) => {},
 }))

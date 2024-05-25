@@ -35,17 +35,17 @@ export default function FreeTime({ data, animConf }: any) {
   return (
     <>
       <div className='fixed bottom-48 flex w-screen flex-col items-center justify-end md:bottom-20'>
-        <h1 className='text-base font-bold md:text-2xl xxl:text-4xl'>
+        <h1 className='xxl:text-4xl text-base font-bold md:text-2xl'>
           {Content.title}
         </h1>
       </div>
-      <div className='m-container absolute w-screen overflow-hidden xl:w-[180%] xl:-translate-x-[20%]'>
+      <div className='h-full absolute w-screen overflow-hidden xl:w-[180%] xl:-translate-x-[20%]'>
         <motion.div
           variants={parent(0.3)}
           initial='hidden'
           animate='show'
           ref={BigImg}
-          className='m-container absolute flex w-full items-center justify-center'
+          className='h-full absolute flex w-full items-center justify-center'
         >
           <CoverImg
             data={data[0]}
@@ -64,7 +64,7 @@ export default function FreeTime({ data, animConf }: any) {
           />
         </motion.div>
       </div>
-      <div className='mx-auto h-screen w-screen items-start overflow-hidden px-4 sm:container sm:px-0 xxl:w-[1440px]'>
+      <div className='xxl:w-[1440px] mx-auto h-screen w-screen items-start overflow-hidden px-4 sm:container sm:px-0'>
         <Title title='HOBBIES' subTitle="What's my" icon className='-mt-36' />
       </div>
     </>

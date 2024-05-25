@@ -1,9 +1,9 @@
 import type { Dispatch } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { PageSkillsAnimation as animationConfig } from '@global/config/defineAnimationConfig'
+import { PageSkillsAnimation as animationConfig } from '@global/config/config.animation'
 
 import * as skillsSection from './skills'
-import { theme } from '@global/config/defineConfig'
+import { theme } from '@global/config'
 const Color = theme.color
 
 type tVariants = {
@@ -41,14 +41,14 @@ export const Header = ({
       >
         <motion.h1
           variants={children as tVariants}
-          className='text-3xl font-semibold text-quaternary-2 dark:text-primary-0 sm:text-4xl lg:text-5xl xxl:text-7xl'
+          className='text-quaternary-2 dark:text-primary-0 xxl:text-7xl text-3xl font-semibold sm:text-4xl lg:text-5xl'
         >
           Hello, I'm <br />
           Jirayu Ninlapun
         </motion.h1>
         <motion.p
           variants={children as tVariants}
-          className='mt-2 text-1xs font-light sm:mt-6 md:text-xs lg:text-base xl:mt-2 xxl:mt-6'
+          className='text-1xs xxl:mt-6 mt-2 font-light sm:mt-6 md:text-xs lg:text-base xl:mt-2'
         >
           I work as an Interactive Web Developer and Designer.
           <br />
@@ -87,7 +87,7 @@ export const Header = ({
                   initial={{ opacity: 0 }}
                   exit={{ opacity: 0 }}
                   animate={{ opacity: MenuSection === i ? 1 : 0 }}
-                  className='absolute -left-[6px] top-[14px] -mt-1 mb-2 h-3 w-3 rounded-md bg-quaternary-2 dark:bg-primary-0 sm:relative sm:left-0 sm:top-px md:my-0 md:-ml-2 md:mr-3 md:w-5'
+                  className='bg-quaternary-2 dark:bg-primary-0 absolute -left-[6px] top-[14px] -mt-1 mb-2 h-3 w-3 rounded-md sm:relative sm:left-0 sm:top-px md:my-0 md:-ml-2 md:mr-3 md:w-5'
                 ></motion.div>
                 <p className='-mb-px hidden w-4 sm:block'>{v.number}</p>
                 <motion.div

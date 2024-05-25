@@ -19,14 +19,22 @@ import {
 } from 'framer-motion'
 import { InnerHeight } from '@nexel/nextjs/libs/hooks/layouts'
 
+export type OnScrollFunctionProps = {
+  pageHeight: number
+  motionValue: MotionValue<string>
+  scrollY: MotionValue<number>
+}
+
+type OnScrollFunction = (value: OnScrollFunctionProps) => void
+
 const SmoothScroll = ({
   children,
   physics = { damping: 13, mass: 0.1, stiffness: 55 },
-  Callback,
+  onScroll,
 }: {
   children: React.ReactNode
   physics?: { damping: number; mass: number; stiffness: number }
-  Callback?: (value: tCallbackReturnValue) => void
+  onScroll?: OnScrollFunction
 }) => {
   // const defaultPhysics = { damping: 15, mass: 0.27, stiffness: 55 }
   const scrollRef = useRef(null)
@@ -61,8 +69,8 @@ const SmoothScroll = ({
   )
 
   useEffect(() => {
-    Callback && Callback({ pageHeight, motionValue, scrollY })
-  }, [Callback, scrollY, pageHeight, motionValue])
+    onScroll && onScroll({ pageHeight, motionValue, scrollY })
+  }, [onScroll, scrollY, pageHeight, motionValue])
 
   return (
     <>
@@ -76,12 +84,6 @@ const SmoothScroll = ({
       <div style={{ height: pageHeight }} />
     </>
   )
-}
-
-export type tCallbackReturnValue = {
-  pageHeight?: number
-  motionValue?: MotionValue<string>
-  scrollY?: MotionValue<number>
 }
 
 export { SmoothScroll }

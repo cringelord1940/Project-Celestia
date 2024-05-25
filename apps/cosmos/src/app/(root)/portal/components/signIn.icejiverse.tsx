@@ -1,79 +1,65 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import type { toast } from 'react-toastify'
-import { formHandler } from '@/utils'
-import { SignIn } from '@backend/auth/icejiverse'
+import { toast } from 'react-toastify'
+import { trpc } from '@trpc'
+import { form } from '@/utils'
 // import { clientLog } from '@nexel/nextjs/libs/log'
 
 const SignInIceJiVerse = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
   // const log = clientLog()
 
-  const { handleChange, executeForm } = formHandler()
-  const handleSubmit = async (e: any) =>
-    executeForm(
-      e,
-      async (f: { email: string; password: string }, t: typeof toast) => {
-        try {
-          const session = await SignIn(f)
-          if (session?.error) {
-            t.error(`Error: ${session?.error}`)
-            return
-          }
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-          if (session?.warn) {
-            t.warn(`${session?.warn}`)
-            return
-          }
+  const { mutateAsync } = trpc.user.portal.signin.useMutation({
+    onSuccess(data) {
+      if (data && !data.success && data.message) {
+        toast.error('Error: ' + data.message)
+        return
+      }
+      toast.success('Sign in complete')
+      router.refresh()
+      // router.push('/dashboard')
+    },
+    onError: () => {
+      toast.error(`Error: Connection failed`)
+      setIsLoading(false)
+      return
+    },
+  })
 
-          if (!session?.session) {
-            t.error(`Error: Get session failed`)
-            return
-          }
-
-          const body = {
-            do: 'set',
-            res: 'set session complete',
-            resCode: 201,
-            cookies: {
-              key: 'next-auth.session-token',
-              value: session?.session,
-            },
-            maxAge: 60 * 60 * 24 * 30,
-          }
-
-          await fetch('/api/auth/cookies', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body),
-          })
-          t.success('Sign in complete')
-          router.refresh()
-          router.push('/app/profile')
-        } catch (e) {
-          t.error("Error: Can't set session")
-          // log.error('AUTH Error', { message: "Can't set session" })
-          throw new Error('AUTH: Set session failed')
-        }
-      },
-    )
+  const { formChange, formSubmit } = form({
+    initial: {
+      email: '',
+      password: '',
+    },
+    onSubmit: async (f) => {
+      setIsLoading(true)
+      f.email &&
+        f.password &&
+        (await mutateAsync({ email: f.email, password: f.password }))
+    },
+    onError: () => {
+      toast.error("Error: Can't set session")
+      throw new Error('AUTH: Set session failed')
+    },
+  })
 
   return (
     <>
       <div className='Card-white-20 Border-white-40 relative ml-2 h-full rounded-lg p-8'>
         <h3 className='text-2xl font-semibold uppercase'>Sign in</h3>
-        <form className='Form-white flex flex-col pt-6' onSubmit={handleSubmit}>
+        <form className='Form-white flex flex-col pt-6' onSubmit={formSubmit}>
           <input
             className='Border-40 rounded-md'
             type='email'
             name='email'
             placeholder='Email'
             required={true}
-            onChange={handleChange}
+            onChange={formChange}
           />
           <input
             className='Border-40 mt-2 rounded-md'
@@ -81,12 +67,9 @@ const SignInIceJiVerse = ({ children }: { children: React.ReactNode }) => {
             name='password'
             placeholder='Password'
             required={true}
-            onChange={handleChange}
+            onChange={formChange}
           />
-          <button
-            className='Btn-40 Anim AnimOpacity-60 mt-5'
-            type='submit'
-          >
+          <button className='Btn-40 Anim AnimOpacity-60 mt-5' type='submit'>
             Submit
           </button>
           <div className='my-3'>

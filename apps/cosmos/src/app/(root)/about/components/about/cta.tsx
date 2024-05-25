@@ -16,11 +16,11 @@ export default function CTA({
       variants={parent(0.2)}
       initial='hidden'
       animate='show'
-      className='flex m-container w-full flex-col items-center justify-center'
+      className='h-full flex w-full flex-col items-center justify-center'
     >
       <motion.h3
         variants={children}
-        className='text-base font-semibold uppercase text-primary-0 lg:text-3xl xxl:text-4xl'
+        className='text-primary-0 xxl:text-4xl text-base font-semibold uppercase lg:text-3xl'
       >
         Anything else?
       </motion.h3>
@@ -31,7 +31,7 @@ export default function CTA({
         <Link
           href='about/skills'
           className={clsx(
-            'Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl',
+            'Anim-2 AnimOpacity-40 AnimScale-sm xxl:text-10xl text-5xl font-bold uppercase lg:text-8xl',
             _dark ? 'text-outline-dark' : 'text-outline',
           )}
         >
@@ -40,7 +40,7 @@ export default function CTA({
         <Link
           href='/project'
           className={clsx(
-            'Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl',
+            'Anim-2 AnimOpacity-40 AnimScale-sm xxl:text-10xl text-5xl font-bold uppercase lg:text-8xl',
             _dark ? 'text-outline-dark' : 'text-outline',
           )}
         >

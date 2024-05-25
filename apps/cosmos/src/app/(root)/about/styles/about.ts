@@ -1,109 +1,135 @@
 import { css, keyframes } from '@emotion/css'
+import { theme } from '@global/config'
 
 // **! Facts About Me
 
-export const FactsContent = css`
-  & > div:before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 4px;
-    left: -25px;
-    background-color: hsl(var(--primary));
-  }
-  & > h5 {
-    color: hsl(var(--primary));
-  }
-  & > div {
-    position: relative;
-    font-size: 16px;
-    display: flex;
-    align-items: flex-start;
-    & > p {
-      opacity: 0.6;
-      line-height: 18px;
-      font-size: inherit;
-    }
-    & > h6 {
-      padding: 0 4px;
-      font-weight: 600;
-      line-height: 18px;
-      font-size: inherit;
-    }
-    & > h5 {
-      padding: 0 4px;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 14px;
-    }
-  }
-  & > div:nth-child(n):not(:last-child) {
-    padding-bottom: 18px;
-  }
-  @media (max-width: 1339.98px) {
+const Color = {
+  light: {
+    primary: theme.color.quaternary[2],
+  },
+  dark: {
+    primary: theme.color.primary[0],
+  },
+}
+
+export const FactsContent = {
+  base: css`
     & > div:before {
-      top: 5px;
-      left: -22px;
-      width: 8px;
-      height: 8px;
-    }
-  }
-  @media (max-width: 1199.98px) {
-    & > div:before {
-      top: 5px;
-      left: -22px;
-      width: 8px;
-      height: 8px;
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 4px;
+      left: -25px;
     }
     & > div {
-      font-size: 14px;
-      & > h5 {
-        font-size: 16px;
-        line-height: 14px;
+      position: relative;
+      font-size: 16px;
+      display: flex;
+      align-items: flex-start;
+      & > p {
+        opacity: 0.6;
+        line-height: 18px;
+        font-size: inherit;
       }
-    }
-  }
-  @media (max-width: 991.98px) {
-    & > div:before {
-      top: 6px;
-      left: -15px;
-      width: 5px;
-      height: 5px;
-    }
-    & > div {
-      font-size: 10px;
+      & > h6 {
+        padding: 0 4px;
+        font-weight: 600;
+        line-height: 18px;
+        font-size: inherit;
+      }
       & > h5 {
-        font-size: 12px;
+        padding: 0 4px;
+        font-weight: 600;
+        font-size: 18px;
         line-height: 14px;
       }
     }
     & > div:nth-child(n):not(:last-child) {
-      padding-bottom: 6px;
+      padding-bottom: 18px;
     }
-  }
-  @media (max-width: 767.98px) {
-    & > div:before {
-      top: 7px;
-      left: -12px;
-      width: 4px;
-      height: 4px;
+    @media (max-width: 1339.98px) {
+      & > div:before {
+        top: 5px;
+        left: -22px;
+        width: 8px;
+        height: 8px;
+      }
     }
-    & > div {
-      font-size: 8px;
-      & > h5 {
+    @media (max-width: 1199.98px) {
+      & > div:before {
+        top: 5px;
+        left: -22px;
+        width: 8px;
+        height: 8px;
+      }
+      & > div {
+        font-size: 14px;
+        & > h5 {
+          font-size: 16px;
+          line-height: 14px;
+        }
+      }
+    }
+    @media (max-width: 991.98px) {
+      & > div:before {
+        top: 6px;
+        left: -15px;
+        width: 5px;
+        height: 5px;
+      }
+      & > div {
         font-size: 10px;
-        line-height: 16px;
+        & > h5 {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+      & > div:nth-child(n):not(:last-child) {
+        padding-bottom: 6px;
       }
     }
-    & > div:nth-child(n):not(:last-child) {
-      padding-bottom: 3px;
+    @media (max-width: 767.98px) {
+      & > div:before {
+        top: 7px;
+        left: -12px;
+        width: 4px;
+        height: 4px;
+      }
+      & > div {
+        font-size: 8px;
+        & > h5 {
+          font-size: 10px;
+          line-height: 16px;
+        }
+      }
+      & > div:nth-child(n):not(:last-child) {
+        padding-bottom: 3px;
+      }
     }
-  }
-  @media (max-width: 479.98px) {
-    width: 120vw;
-  }
-`
+    @media (max-width: 479.98px) {
+      width: 120vw;
+    }
+  `,
+  light: css`
+      & > div:before {
+        background-color: ${Color.light.primary};
+      }
+        & > h5 {
+          color: ${Color.light.primary};
+        }
+      }
+    `,
+  dark: css`
+    & > div:before {
+      background-color: ${Color.dark.primary};
+    }
+      & > h5 {
+        color: ${Color.dark.primary};
+      }
+    }
+  `,
+}
 
 // **! Marquee
 

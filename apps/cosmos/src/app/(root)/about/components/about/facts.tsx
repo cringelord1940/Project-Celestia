@@ -24,23 +24,23 @@ export default function Facts({
   const factsContentCSS = CSS.FactsContent
 
   return (
-    <div className='m-container relative w-full'>
-      <div className='absolute right-0 flex h-full items-center justify-end pr-12 xxl:justify-center xxl:px-0'>
+    <div className='h-full relative w-full'>
+      <div className='xxl:justify-center xxl:px-0 absolute right-0 flex h-full items-center justify-end pr-12'>
         <motion.div
           variants={newParent(0.7)}
           initial='hidden'
           animate='show'
-          className='relative flex h-3/5 w-3/5 flex-col items-end md:h-3/4 xxl:w-full'
+          className='xxl:w-full relative flex h-3/5 w-3/5 flex-col items-end md:h-3/4'
         >
           <motion.div
             variants={children}
-            className='relative right-20 overflow-hidden rounded-xl md:right-40 xxl:right-32'
+            className='xxl:right-32 relative right-20 overflow-hidden rounded-xl md:right-40'
           >
             <Image src={ImgFacts1} width={767} height={450} alt='IceJI Photo' />
           </motion.div>
           <motion.div
             variants={children}
-            className='-mt-8 overflow-hidden rounded-xl sm:-mt-20 md:-mt-12 xxl:-mt-24'
+            className='xxl:-mt-24 -mt-8 overflow-hidden rounded-xl sm:-mt-20 md:-mt-12'
           >
             <Image src={ImgFacts2} width={447} height={450} alt='IceJI Photo' />
           </motion.div>

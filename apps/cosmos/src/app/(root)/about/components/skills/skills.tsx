@@ -1,12 +1,7 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faCodeFork,
-  faDownload,
-  faDesktop,
-} from '@fortawesome/free-solid-svg-icons'
+import { FaCodeFork, FaDownload, FaDesktop } from 'react-icons/fa6'
 
 type DataType = {
   target?: number
@@ -57,15 +52,15 @@ export const Section_Projects = ({
   const IconList = {
     fork: {
       text: 'fork',
-      icon: faCodeFork,
+      icon: FaCodeFork,
     },
     download: {
       text: 'download',
-      icon: faDownload,
+      icon: FaDownload,
     },
     website: {
       text: 'website',
-      icon: faDesktop,
+      icon: FaDesktop,
     },
   }
 
@@ -79,7 +74,15 @@ export const Section_Projects = ({
           className={clsx(classRowContent.div.css, 'cursor-pointer')}
           href={link as string}
         >
-          <FontAwesomeIcon icon={IconList[icon].icon} className='h-4' />
+          {icon === 'fork' ? (
+            <FaCodeFork /> ? (
+              'download'
+            ) : (
+              <FaDownload />
+            )
+          ) : (
+            <FaDesktop />
+          )}
           <p className='ml-2'>{IconList[icon].text}</p>
         </Link>
       </div>

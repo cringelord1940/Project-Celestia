@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import clsx from 'clsx'
-import { PageAboutAnimation as animConf } from '@global/config/defineAnimationConfig'
+import { PageAboutAnimation as animConf } from '@global/config/config.animation'
 import { IconDev, IconImage, IconPresent } from '../../../assets'
 import { UI } from '@global/store'
 
@@ -32,14 +32,14 @@ export default function Header({
     >
       <motion.h2
         variants={animC}
-        className='text-3xl font-semibold uppercase text-quaternary-2 dark:text-primary-0 md:text-5xl xxl:text-7xl'
+        className='text-quaternary-2 dark:text-primary-0 xxl:text-7xl text-3xl font-semibold uppercase md:text-5xl'
       >
         {subTitle}
       </motion.h2>
       <motion.h1
         variants={animC}
         className={clsx(
-          'mt-0 text-7xl font-semibold uppercase md:-mt-4 md:text-9xl xxl:-mt-12 xxl:text-[13rem]',
+          'xxl:-mt-12 xxl:text-[13rem] mt-0 text-7xl font-semibold uppercase md:-mt-4 md:text-9xl',
           _dark ? 'text-outline-dark' : 'text-outline',
         )}
       >
@@ -48,7 +48,7 @@ export default function Header({
       {children && (
         <motion.div
           variants={animC}
-          className='relative left-28 w-3/5 rounded-md bg-white/10 pb-6 pt-5 backdrop-blur-md lg:left-48 lg:w-1/2 lg:pb-12 lg:pt-10 xxl:left-40'
+          className='xxl:left-40 relative left-28 w-3/5 rounded-md bg-white/10 pb-6 pt-5 backdrop-blur-md lg:left-48 lg:w-1/2 lg:pb-12 lg:pt-10'
         >
           <div className='-ml-20 lg:-ml-36'>{children}</div>
         </motion.div>
