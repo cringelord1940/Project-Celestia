@@ -73,7 +73,11 @@ const SignInIceJiVerse = ({ children }: { children: React.ReactNode }) => {
             Submit
           </button>
           <div className='my-3'>
-            <input type='checkbox' className='Form-white-checkbox mr-2' />
+            <input
+              type='checkbox'
+              className='Form-white-checkbox mr-2'
+              title='remember me'
+            />
             <label className='flex'>
               <p className='-mt-px text-xs'>Remember me</p>
             </label>

@@ -2,13 +2,12 @@
 'use client'
 
 import { useState } from 'react'
-import { UI } from '@global/store'
-import { SetNavStateWithRoutes } from '@global/func/state'
+import { useUiState } from '@/store'
 import { skills as Section } from '../components'
-import * as mySkills from '@contents/pages/about.skills'
+import * as mySkills from '@/contents/pages/about.skills'
 
 const MySkill = () => {
-  const _dark = UI((state) => state.dark)
+  const _dark = useUiState((state) => state.dark)
   const [MenuSection, setMenuSection] = useState(0)
   const InPageRoute = [
     'Skills | Projects',
@@ -21,12 +20,6 @@ const MySkill = () => {
 
   return (
     <>
-      <SetNavStateWithRoutes
-        Page={MenuSection}
-        Pages={6}
-        id={1}
-        Routes={InPageRoute}
-      />
       <div className='m-container xxl:w-[1440px] mx-auto flex flex-col items-start overflow-hidden px-4 sm:container sm:px-0 md:flex-row'>
         <div className='Card-back-md-40 mx-0 mt-10 w-full sm:mt-28 md:mx-5 md:w-1/2'>
           <Section.Header

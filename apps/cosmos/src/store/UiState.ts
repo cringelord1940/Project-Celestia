@@ -36,7 +36,7 @@ export enum CURSOR {
   LOGO = 'logo',
   POINTER = 'pointer',
   GO = 'go',
-  EXPANSE = 'expense',
+  EXPANSE = 'expanse',
   LENS = 'lens',
 }
 

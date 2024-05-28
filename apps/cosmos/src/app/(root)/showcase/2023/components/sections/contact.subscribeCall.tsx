@@ -1,5 +1,5 @@
 'use server'
-import { prisma } from '@nexel/prisma'
+import { prisma } from '@database'
 
 const subscribeCall = async (data: { email: string }) => {
   try {

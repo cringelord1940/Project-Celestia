@@ -1,14 +1,14 @@
 import { css, keyframes } from '@emotion/css'
-import { theme } from '@global/config'
+import { theme } from '@config'
 
 // **! Facts About Me
 
 const Color = {
   light: {
-    primary: theme.color.quaternary[2],
+    primary: theme.color.extend.quaternary[2],
   },
   dark: {
-    primary: theme.color.primary[0],
+    primary: theme.color.primary,
   },
 }
 

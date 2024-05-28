@@ -5,7 +5,6 @@ import { useShallow } from 'zustand/react/shallow'
 import Header from './components/header'
 import TableOfContents from './components/tableOfContents'
 import { SmoothScroll } from '@nexel/cosmos/animations'
-import { useScrollState } from '@nexel/cosmos/animations/hooks'
 
 import Content from './contents'
 

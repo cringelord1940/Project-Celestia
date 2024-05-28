@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
 import clsx from 'clsx'
-import { PageAboutAnimation as animConf } from '@global/config/config.animation'
 import { IconDev, IconImage, IconPresent } from '../../../assets'
-import { UI } from '@global/store'
+import { useUiState } from '@/store'
 
 export default function Header({
   children,
@@ -17,8 +16,24 @@ export default function Header({
   icon?: boolean
   className?: string
 }) {
-  const { parent: animP, children: animC } = animConf.stagger_yUp_O
-  const _dark = UI((state) => state.dark)
+  const { parent: animP, children: animC } = {
+    parent: (delay: number) => ({
+      hidden: { visibility: 'hidden', y: 50, opacity: 0 },
+      show: {
+        visibility: 'visible',
+        y: 0,
+        opacity: 1,
+        transition: {
+          staggerChildren: delay,
+        },
+      },
+    }),
+    children: {
+      hidden: { visibility: 'hidden', y: 50, opacity: 0 },
+      show: { visibility: 'visible', y: 0, opacity: 1 },
+    },
+  }
+  const _dark = useUiState((state) => state.dark)
 
   return (
     <motion.div

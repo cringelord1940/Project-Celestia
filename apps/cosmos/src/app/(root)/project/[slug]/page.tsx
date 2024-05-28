@@ -4,8 +4,9 @@ import { gql } from 'graphql-request'
 import * as FALLBACK from '@components/post/error'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
-import { getProject, FETCH } from '@/utils'
-import { PROJECT_TYPE } from '@/enums'
+import { FETCH } from '@/enums'
+import { getProject } from '@/utils'
+import { PROJECT } from '@/enums'
 import {
   WebProjectTemplate,
   AppProjectTemplate,
@@ -82,22 +83,22 @@ async function Page({ params: { slug } }: PageProps) {
     return <FALLBACK.NotFound title='PROJECT' backURL='/project' />
   }
 
-  switch (data.project.projectType) {
-    case PROJECT_TYPE.WEB:
-      return <WebProjectTemplate project={data.project} />
-    case PROJECT_TYPE.APP:
-      return <AppProjectTemplate project={data.project} />
-    case PROJECT_TYPE.DESKTOP_APP:
-      return <DesktopAppProjectTemplate project={data.project} />
-    case PROJECT_TYPE.PRODUCT:
-      return <ProductProjectTemplate project={data.project} />
-    case PROJECT_TYPE.BRANDING:
-      return <BrandingProjectTemplate project={data.project} />
-    case PROJECT_TYPE.MOVIE:
-      return <MovieProjectTemplate project={data.project} />
-    default:
+  // switch (data.project.projectType) {
+  //   case PROJECT.TYPE.WEB:
+  //     return <WebProjectTemplate project={data.project} />
+  //   case PROJECT.TYPE.APP:
+  //     return <AppProjectTemplate project={data.project} />
+  //   case PROJECT.TYPE.DESKTOP_APP:
+  //     return <DesktopAppProjectTemplate project={data.project} />
+  //   case PROJECT.TYPE.PRODUCT:
+  //     return <ProductProjectTemplate project={data.project} />
+  //   case PROJECT.TYPE.BRANDING:
+  //     return <BrandingProjectTemplate project={data.project} />
+  //   case PROJECT.TYPE.MOVIE:
+  //     return <MovieProjectTemplate project={data.project} />
+  //   default:
       return <></>
-  }
+  // }
 }
 
 export default Page

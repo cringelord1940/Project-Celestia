@@ -1,16 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
-import { State } from '@global/store'
-
 const AboutNode = () => {
-  const _setNavRouteActiveState = State((state) => state.setNavRouteActiveState)
-  useEffect(() => {
-    _setNavRouteActiveState({
-      id: 99,
-    })
-  }, [_setNavRouteActiveState])
-
   return (
     <>
       <div className='h-svh w-svw'>

@@ -7,7 +7,8 @@ const Background = () => {
         src='/images/bg/hex-pattern.png'
         alt='background'
         fill
-        style={{ objectFit: 'cover' }}
+        objectFit='cover'
+        // style={{ objectFit: 'cover' }}
         className='pointer-events-none z-0 h-full w-full opacity-[0.07] saturate-0'
       />
     </>

@@ -1,9 +1,8 @@
 import type { Dispatch } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { PageSkillsAnimation as animationConfig } from '@global/config/config.animation'
 
 import * as skillsSection from './skills'
-import { theme } from '@global/config'
+import { theme } from '@config'
 const Color = theme.color
 
 type tVariants = {
@@ -28,7 +27,23 @@ export const Header = ({
     { number: '06', name: 'Works' },
   ]
 
-  const { parent, children } = animationConfig.stagger_yUp_O
+  const { parent, children } = {
+    parent: (delay: number) => ({
+      hidden: { visibility: 'hidden', y: 50, opacity: 0 },
+      show: {
+        visibility: 'visible',
+        y: 0,
+        opacity: 1,
+        transition: {
+          staggerChildren: delay,
+        },
+      },
+    }),
+    children: {
+      hidden: { visibility: 'hidden', y: 50, opacity: 0 },
+      show: { visibility: 'visible', y: 0, opacity: 1 },
+    },
+  }
   const transition = { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9] }
 
   return (
@@ -48,7 +63,7 @@ export const Header = ({
         </motion.h1>
         <motion.p
           variants={children as tVariants}
-          className='text-1xs xxl:mt-6 mt-2 font-light sm:mt-6 md:text-xs lg:text-base xl:mt-2'
+          className='xxl:mt-6 mt-2 text-1xs font-light sm:mt-6 md:text-xs lg:text-base xl:mt-2'
         >
           I work as an Interactive Web Developer and Designer.
           <br />
@@ -75,7 +90,11 @@ export const Header = ({
                 exit={{ color: _dark ? '#ffffff' : '#101010' }}
                 animate={
                   MenuSection === i
-                    ? { color: _dark ? Color.primary[0] : Color.quaternary[2] }
+                    ? {
+                        color: _dark
+                          ? Color.primary
+                          : Color.extend.quaternary[2],
+                      }
                     : { color: _dark ? '#ffffff' : '#101010' }
                 }
                 transition={transition}
@@ -103,8 +122,8 @@ export const Header = ({
                     MenuSection === i
                       ? {
                           backgroundColor: _dark
-                            ? Color.primary[0]
-                            : Color.quaternary[2],
+                            ? Color.primary
+                            : Color.extend.quaternary[2],
                           width: 32,
                         }
                       : {
@@ -135,7 +154,24 @@ export const SkillSection = ({
   const { Section_Projects, Section_Skills, Section_Team, Section_Works } =
     skillsSection
 
-  const { parent, children } = animationConfig.stagger_xLeft_O
+  const { parent, children } = {
+    parent: (delay: number) => ({
+      hidden: { visibility: 'hidden', x: 100, opacity: 0 },
+      show: {
+        visibility: 'visible',
+        x: 0,
+        opacity: 1,
+        transition: {
+          staggerChildren: delay,
+        },
+      },
+      exit: { visibility: 'hidden', x: 100, opacity: 0 },
+    }),
+    children: {
+      hidden: { visibility: 'hidden', x: 100, opacity: 0 },
+      show: { visibility: 'visible', x: 0, opacity: 1 },
+    },
+  }
   const transition = { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.9] }
   const Anim = { children, transition }
   return (

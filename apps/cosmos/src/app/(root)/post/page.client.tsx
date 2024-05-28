@@ -3,7 +3,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import { useUiState } from '@/store'
 import { SmoothScroll } from '@nexel/cosmos/animations'
-import { useScrollState } from '@nexel/cosmos/animations/hooks'
 import { TypeA as Card } from '@components/post/card'
 
 type tPost = {

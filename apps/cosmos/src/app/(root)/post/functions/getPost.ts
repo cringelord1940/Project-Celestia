@@ -2,7 +2,7 @@
 import { gql } from 'graphql-request'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
-import { FETCH } from '../post.d'
+import { FETCH } from '@/enums'
 
 const getPost = async (slug: string) => {
   try {

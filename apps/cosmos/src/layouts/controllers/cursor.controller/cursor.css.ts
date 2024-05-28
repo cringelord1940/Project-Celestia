@@ -21,14 +21,20 @@ export const MainCursorCSS = css`
   &.logo {
     height: 80px;
     width: 80px;
-    background-color: #fff;
+    background-color: hsl(var(--foreground));
     mix-blend-mode: difference;
     transition-duration: 250ms;
   }
   &.expanse {
     height: 100px;
     width: 100px;
-    background-color: #ffffff22;
+    background-color: hsl(var(--foreground) / 0.1);
+    transition-duration: 250ms;
+  }
+  &.square {
+    height: 100px;
+    width: 100px;
+    background-color: hsl(var(--foreground) / 0.1);
     transition-duration: 250ms;
   }
   &.go {

@@ -7,15 +7,13 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import clsx from 'clsx'
 
 import { env } from '@env'
-import Config from '@config'
 import { Wrapper } from '@/layouts'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'nprogress/nprogress.css'
 import './globals.css'
 
-export const metadata = { ...Config.metaData }
-export const viewport = { ...Config.viewport }
+export { viewport, metadata } from '@config'
 
 const fInter = Inter({
   subsets: ['latin'],

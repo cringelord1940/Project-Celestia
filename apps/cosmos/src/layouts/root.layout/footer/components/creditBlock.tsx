@@ -3,8 +3,8 @@ import { useShallow } from 'zustand/react/shallow'
 import { useUiState, MODAL } from '@/store'
 
 export default function CreditText() {
-  const [_modal, _setModal] = useUiState(
-    useShallow((st) => [st.modal, st.setModal]),
+  const [_modal, _onToggleModal] = useUiState(
+    useShallow((st) => [st.modal, st.onToggleModal]),
   )
 
   return (
@@ -17,7 +17,7 @@ export default function CreditText() {
         <button
           className='Anim AnimOpacity-60 cursor-pointer pr-2'
           onClick={() => {
-            _setModal(_modal === MODAL.APP_INFO ? undefined : MODAL.APP_INFO)
+            _onToggleModal(MODAL.APP_INFO)
           }}
         >
           TheIceJi Cosmos

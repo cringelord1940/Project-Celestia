@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/node'
 import { Logger } from '../logger'
-import { prisma } from '@nexel/prisma'
+// import { prisma } from '@nexel/prisma'
 
 type config = { sentry: { dsn: string }; app?: { version: string } }
 

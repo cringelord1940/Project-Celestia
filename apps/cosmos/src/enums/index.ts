@@ -1,2 +1,3 @@
-export { PROJECT_TYPE } from './project'
-export { CONTENT_BLOCK } from './content'
+export * as PROJECT from './project'
+export * as POST from './post'
+export * from './status'

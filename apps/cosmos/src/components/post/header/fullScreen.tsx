@@ -41,7 +41,7 @@ const FullScreenHeader = ({
       className='relative flex h-dvh items-end justify-center overflow-hidden'
       style={{ backgroundColor: ColorBg }}
     >
-      <div className='container z-10 w-screen px-4 xxl:w-[1440px]'>
+      <div className='xxl:w-[1440px] container z-10 w-screen px-4'>
         <motion.div
           variants={animList}
           initial='initial'
@@ -61,7 +61,7 @@ const FullScreenHeader = ({
         <motion.h1
           initial={{ y: 300, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className='mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl xxl:text-8xl'
+          className='xxl:text-8xl mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl'
         >
           {Title}
         </motion.h1>
@@ -79,7 +79,7 @@ const FullScreenHeader = ({
           }
         />
       </motion.div>
-      <div className='from-backgroundLight-1 to-backgroundLight-1/0 dark:from-background-1 dark:to-background-1/0 absolute h-80 w-screen bg-gradient-to-t'></div>
+      <div className='absolute h-80 w-screen bg-gradient-to-t from-background to-background/0'></div>
     </div>
   )
 }

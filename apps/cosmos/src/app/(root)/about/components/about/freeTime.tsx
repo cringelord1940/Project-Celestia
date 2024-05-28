@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Title from './components/title'
 import type { tFreeTimeItem } from '../../types'
 
-export default function FreeTime({ data, animConf }: any) {
+export default function FreeTime({ data }: any) {
   useLayoutEffect(() => {
     if (window.innerWidth > 1199) {
       document.addEventListener('mousemove', onMouseMove)
@@ -29,8 +29,22 @@ export default function FreeTime({ data, animConf }: any) {
     }%, 0px)`
   }
 
-  const { parent, children: animChildren } = animConf.stagger_yUp
-  animChildren.y = 200
+  const { animParent, animChildren } = {
+    animParent: (delay: number) => ({
+      hidden: { visibility: 'hidden', y: 100 },
+      show: {
+        visibility: 'visible',
+        y: 0,
+        transition: {
+          staggerChildren: delay,
+        },
+      },
+    }),
+    animChildren: {
+      hidden: { visibility: 'hidden', y: 100 },
+      show: { visibility: 'visible', y: 0 },
+    },
+  }
 
   return (
     <>
@@ -39,13 +53,13 @@ export default function FreeTime({ data, animConf }: any) {
           {Content.title}
         </h1>
       </div>
-      <div className='h-full absolute w-screen overflow-hidden xl:w-[180%] xl:-translate-x-[20%]'>
+      <div className='absolute h-full w-screen overflow-hidden xl:w-[180%] xl:-translate-x-[20%]'>
         <motion.div
-          variants={parent(0.3)}
+          variants={animParent(0.3)}
           initial='hidden'
           animate='show'
           ref={BigImg}
-          className='h-full absolute flex w-full items-center justify-center'
+          className='absolute flex h-full w-full items-center justify-center'
         >
           <CoverImg
             data={data[0]}

@@ -16,6 +16,7 @@
       "@components/*": ["src/components/*"],
       "@backend": ["backend"],
       "@backend/*": ["backend/*"],
+      "@database": ["backend/database"],
       "@trpc": ["backend/trpc/client"],
       "@types": ["types"],
       "public/*": ["public/*"]

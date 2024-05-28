@@ -9,20 +9,18 @@ import {
 
 export default function SocialLinkIcon({
   name,
-  icon,
   href,
   index,
 }: {
   name: string
-  icon: string
   href: string
   index: number
 }) {
   return (
     <motion.div
-      // initial={aFooterSocialIcon.initial}
-      // animate={aFooterSocialIcon.animate}
-      // transition={aFooterSocialIcon.transition(index === 0 ? 0 : index / 10)}
+    // initial={aFooterSocialIcon.initial}
+    // animate={aFooterSocialIcon.animate}
+    // transition={aFooterSocialIcon.transition(index === 0 ? 0 : index / 10)}
     >
       <Link href={href} className='Anim opacity-40 hover:opacity-100'>
         {SocialIconGenerator(name)}
@@ -32,13 +30,13 @@ export default function SocialLinkIcon({
 }
 
 const SocialIconGenerator = (name: string) => {
-  if (name === 'Facebook') {
+  if (name === 'facebook') {
     return <FaFacebookF />
-  } else if (name === 'Instagram') {
+  } else if (name === 'instagram') {
     return <FaInstagram />
-  } else if (name === 'Youtube') {
+  } else if (name === 'youtube') {
     return <FaYoutube />
-  } else if (name === 'Mail') {
+  } else if (name === 'mail') {
     return <FaEnvelope />
   } else {
     return <></>

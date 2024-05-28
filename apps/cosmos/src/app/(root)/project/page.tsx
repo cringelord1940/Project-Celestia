@@ -1,14 +1,14 @@
 import Client from './page.client'
 import * as FALLBACK from '@components/post/error'
-import { FETCH } from './project.d'
-import { getAllProjects } from './functions'
+import { FETCH } from '@/enums'
+import { getProjects } from '@/utils'
 
 export const metadata = {
   title: 'Projects',
 }
 
 async function Page() {
-  const data = await getAllProjects()
+  const data = await getProjects()
 
   if (data.status === FETCH.ERROR) {
     return (

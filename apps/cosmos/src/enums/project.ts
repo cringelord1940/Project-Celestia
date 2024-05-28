@@ -1,8 +1,44 @@
-export enum PROJECT_TYPE {
+export enum TYPE {
   APP = 'APP',
   DESKTOP_APP = 'DESKTOP_APP',
   WEB = 'WEB',
   PRODUCT = 'PRODUCT',
   MOVIE = 'MOVIE',
   BRANDING = 'BRANDING',
+}
+
+export enum HEADER {
+  FULL = 'FULL',
+  FULL_CENTER = 'FULL_CENTER',
+  IMMERSIVE = 'IMMERSIVE',
+  GALLERY = 'GALLERY',
+  HALF = 'HALF',
+  OVERLAP = 'OVERLAP',
+}
+
+export enum BLOCK_TYPE {
+  COLOR_PALETTE = 'COLOR_PALETTE',
+  CONTENT = 'CONTENT',
+  QUOTE = 'QUOTE',
+  MARQUEE = 'MARQUEE',
+  GRID = 'GRID',
+  IMAGE = 'IMAGE',
+  VIDEO = 'VIDEO',
+}
+
+export enum IMAGE {
+  MOBILE_MOCKUP = 'MOBILE_MOCKUP',
+  ONE_PHOTO = 'ONE_PHOTO',
+  GALLERY_4 = 'GALLERY_4',
+  BANNER = 'BANNER',
+}
+
+export enum VIDEO_SRC {
+  VIMEO = 'VIMEO',
+  YOUTUBE = 'YOUTUBE',
+}
+
+export enum MARQUEE {
+  AUTO = 'AUTO',
+  SCROLLING = 'SCROLLING'
 }

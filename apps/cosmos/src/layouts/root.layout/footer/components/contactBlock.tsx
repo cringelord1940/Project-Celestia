@@ -6,13 +6,13 @@ import SocialLinkIcon from './socialLinkIcon'
 const CreditBlock = () => {
   const [_setCursor] = useUiState(useShallow((st) => [st.setCursor]))
 
-  const contacts = [
-    contactsRaw.facebook,
-    contactsRaw.instagram,
-    contactsRaw.youtube,
-    contactsRaw.mail,
-    contactsRaw.discord,
-  ]
+  const contacts = {
+    facebook: contactsRaw.facebook,
+    instagram: contactsRaw.instagram,
+    youtube: contactsRaw.youtube,
+    mail: contactsRaw.mail,
+    discord: contactsRaw.discord,
+  }
 
   return (
     <div
@@ -27,14 +27,8 @@ const CreditBlock = () => {
         _setCursor(undefined)
       }}
     >
-      {contacts.map((v, i) => (
-        <SocialLinkIcon
-          name={v.name}
-          icon={v.icon}
-          href={v.href}
-          index={i}
-          key={i}
-        />
+      {Object.entries(contacts).map(([key, href], i) => (
+        <SocialLinkIcon name={key} href={href} index={i} key={key} />
       ))}
     </div>
   )

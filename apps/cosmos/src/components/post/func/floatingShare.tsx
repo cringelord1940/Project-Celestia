@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaTwitter, FaPinterest, FaAnglesUp } from 'react-icons/fa6'

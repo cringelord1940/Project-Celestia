@@ -1,7 +1,7 @@
 import Client from './page.client'
 import * as FALLBACK from '@components/post/error'
 import { getAllPosts } from './functions'
-import { FETCH } from './post.d'
+import { FETCH } from '@/enums'
 
 export const metadata = {
   title: 'Posts',

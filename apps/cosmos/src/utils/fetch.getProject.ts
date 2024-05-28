@@ -2,7 +2,7 @@
 import { gql } from 'graphql-request'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
-import { FETCH } from './fetch'
+import { FETCH } from '@/enums'
 
 const getProject = async (slug: string) => {
   try {
@@ -16,10 +16,10 @@ const getProject = async (slug: string) => {
           tagline
           slug
           tag
-          projectCategory {
-            title
-            slug
-          }
+          # projectCategory {
+          #   title
+          #   slug
+          # }
           headerType {
             selectHeaderType
             headerGallery {

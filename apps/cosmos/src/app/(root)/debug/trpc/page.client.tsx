@@ -1,6 +1,6 @@
 'use client'
 
-import { trpc } from '@server/trpc/client'
+import { trpc } from '@trpc'
 import type { Session } from 'next-auth'
 
 function Client(p: { session: Session | null }): JSX.Element {

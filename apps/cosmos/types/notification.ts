@@ -1,3 +1,3 @@
-import { Notification as PrismaNotification } from '@nexel/prisma'
+import { Notification as PrismaNotification } from '@prisma/client'
 
 export type Notification = PrismaNotification

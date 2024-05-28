@@ -1,14 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { UI } from '@global/store'
-import { SetNavStateWithRoutes } from '@global/func/state'
-import { FreeTimeItems } from '@contents/pages/about'
-import { PageAboutAnimation as animConf } from '@global/config/config.animation'
+import { useUiState } from '@/store'
+import { FreeTimeItems } from '@/contents/pages/about'
 import { about } from './components'
+import { useShallow } from 'zustand/react/shallow'
 
 const Client = () => {
-  const _dark = UI((state) => state.dark)
+  const _dark = useUiState(useShallow((state) => state.dark))
   const [Page, setPage] = useState(0)
 
   const { Hero, CTA, Facts, FreeTime, Nav } = about
@@ -22,21 +21,15 @@ const Client = () => {
 
   return (
     <>
-      <SetNavStateWithRoutes
-        Page={Page}
-        Pages={4}
-        id={0}
-        Routes={InPageRoute}
-      />
-      {Page === 2 && <FreeTime data={FreeTimeItems} animConf={animConf} />}
+      {Page === 2 && <FreeTime data={FreeTimeItems} />}
       {!(Page === 2) && (
-        <div className='h-full mx-auto w-screen items-start overflow-hidden px-4 sm:container sm:px-0 xxl:w-[1440px]'>
+        <div className='xxl:w-[1440px] mx-auto h-full w-screen items-start overflow-hidden px-4 sm:container sm:px-0'>
           {Page === 0 && <Hero />}
-          {Page === 1 && <Facts animConf={animConf} _dark={_dark} />}
-          {Page === 3 && <CTA animConf={animConf} _dark={_dark} />}
+          {Page === 1 && <Facts _dark={_dark} />}
+          {Page === 3 && <CTA _dark={_dark} />}
         </div>
       )}
-      <Nav Page={Page} setPage={setPage} animConf={animConf} />
+      <Nav Page={Page} setPage={setPage} />
     </>
   )
 }

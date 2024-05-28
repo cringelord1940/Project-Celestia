@@ -1,3 +1,5 @@
+'use client'
+
 import type { Project } from '@types'
 import { useShallow } from 'zustand/react/shallow'
 import { SmoothScroll } from '@nexel/cosmos/animations'
@@ -32,9 +34,7 @@ export const Layout: React.FC<ProjectLayoutProps> = ({ children, project }) => {
             lang='th'
           />
         )}
-        <div className='bg-background flex w-dvw'>
-          {children}
-        </div>
+        <div className='flex w-dvw bg-background'>{children}</div>
       </SmoothScroll>
     </>
   )

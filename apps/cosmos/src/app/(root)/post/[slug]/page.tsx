@@ -6,7 +6,7 @@ import * as FALLBACK from '@components/post/error'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
 import { getPost } from '../functions'
-import { FETCH } from '../post.d'
+import { FETCH } from '@/enums'
 
 type PageProps = {
   params: { slug: string }

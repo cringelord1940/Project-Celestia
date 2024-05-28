@@ -4,16 +4,17 @@
 import { useShallow } from 'zustand/react/shallow'
 import { useUiState } from '@/store'
 import { FullScreenHeader } from '@components/post/header'
-import { RawMap } from '@components/post/utils'
+import { content } from '@/utils'
 
 // import { Footer } from '@global/layout/components/footer'
 import { SmoothScroll } from '@nexel/cosmos/animations'
 import { FloatingShare } from '@components/post/func'
-import type { tPost } from '../post'
+import type { Post } from '@types'
 
-const Client = ({ post }: { post: tPost }) => {
+const Client = ({ post }: { post: Post }) => {
   const basePath = 'https://theiceji.com/post/'
   const shareMedia = post.title + '|' + post.excerpt
+  const Content = content.ContentFromRaw
 
   const [onScroll] = useUiState(useShallow((st) => [st.onScroll]))
 
@@ -33,7 +34,7 @@ const Client = ({ post }: { post: tPost }) => {
         />
         <div className='flex w-dvw'>
           <div className='container px-4 py-48 xl:w-[1024px]'>
-            <RawMap RAW={post.content.raw.children} />
+            <Content raw={post.content.raw.children} />
           </div>
         </div>
         {/* <Footer /> */}

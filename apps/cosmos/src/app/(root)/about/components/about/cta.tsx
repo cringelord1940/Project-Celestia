@@ -2,30 +2,39 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-export default function CTA({
-  animConf,
-  _dark,
-}: {
-  animConf: any
-  _dark: boolean
-}) {
-  const { parent, children } = animConf.stagger_yUp
+export default function CTA({ _dark }: { _dark: boolean }) {
+  const { animParent, animChildren } = {
+    animParent: (delay: number) => ({
+      hidden: { visibility: 'hidden', y: 100 },
+      show: {
+        visibility: 'visible',
+        y: 0,
+        transition: {
+          staggerChildren: delay,
+        },
+      },
+    }),
+    animChildren: {
+      hidden: { visibility: 'hidden', y: 100 },
+      show: { visibility: 'visible', y: 0 },
+    },
+  }
 
   return (
     <motion.div
-      variants={parent(0.2)}
+      variants={animParent(0.2)}
       initial='hidden'
       animate='show'
-      className='h-full flex w-full flex-col items-center justify-center'
+      className='flex h-full w-full flex-col items-center justify-center'
     >
       <motion.h3
-        variants={children}
+        variants={animChildren}
         className='text-primary-0 xxl:text-4xl text-base font-semibold uppercase lg:text-3xl'
       >
         Anything else?
       </motion.h3>
       <motion.div
-        variants={children}
+        variants={animChildren}
         className='flex flex-col items-center justify-center'
       >
         <Link

@@ -1,6 +1,6 @@
 import { Client } from './page.client'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '@server/auth'
+import { authOptions } from '@backend/auth'
 // import { trpcCaller } from '@server/trpc'
 
 const Page = async () => {
