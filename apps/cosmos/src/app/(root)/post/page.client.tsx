@@ -19,7 +19,7 @@ type tPost = {
 }
 
 const Client = ({ posts }: { posts: any[] }) => {
-  posts = [...posts, ...posts]
+  // posts = [...posts, ...posts]
 
   const [onScroll] = useUiState(useShallow((st) => [st.onScroll]))
 

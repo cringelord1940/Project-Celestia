@@ -8,7 +8,7 @@ const getProjects = async () => {
   try {
     const requestQL = gql`
       {
-        projects_old {
+        projects {
           title
           slug
           featured
@@ -26,7 +26,7 @@ const getProjects = async () => {
     const { projects_old: projects } = await useFetchQL(
       env.GRAPHQL_PROJECT_URL,
       { query: requestQL },
-      180,
+      { revalidate: 180 },
     )
 
     return { status: FETCH.SUCCESS, projects }

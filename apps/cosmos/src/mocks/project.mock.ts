@@ -1,238 +1,200 @@
 // cSpell: disable
+import type { Project } from '@types'
+import { PROJECT } from '@/enums'
 
-export const ProjectMitrPhol = {
-  title: 'MitrPhol',
-  projectType: 'PRODUCT',
-  featured: false,
-  excerpt: 'MitrPhol redesign focusing packaging and mockup',
-  tagline: 'MitrPhol is the largest sugar producer in Asia',
-  slug: 'mitrphol',
-  tag: ['Packaging'],
-  projectCategory: [
-    {
-      title: 'Graphic Design',
-      slug: 'graphic-design',
-    },
-    {
-      title: '— Packaging',
-      slug: 'packaging',
-    },
-  ],
-  headerType: {
-    selectHeaderType: 'FULL',
-    headerGallery: [],
-  },
-  coverImage: {
-    url: 'https://media.graphassets.com/9gXKj2SQK6W4DK9DNXcQ',
-  },
-  colorIdentity: {
-    rgba: {
-      g: 183,
-      b: 241,
-      r: 30,
-    },
-    hex: '#1eb7f1',
-  },
-  client: 'Mitrphol',
-  industry: 'Food',
-  projectDate: 'Mar, 2018',
-  services: 'Packaging design',
-  introduction: [
-    {
-      html: '<h3>Asia&#39;s biggest sugar and bio-energy producer</h3><p>Mitr Phol Sugar Corp is a privately owned group of companies, mainly owned by the Vongkusolkit family. As of 2014, Mitr Phol is ranked as the world&#39;s fifth-largest sugar producer and the largest producer in Asia. It is Thailand&#39;s largest sugar producer and the second largest in China through its joint venture company East Asia Sugar. In addition to Thailand and China, Mitr Phol has operations and investments in Lao PDR, Cambodia, and most recently Australia. Its key business units include sugar, wood substitute materials, and renewable energy.</p>',
-    },
-  ],
-  bannerOption: false,
-  bannerImage: {
-    url: 'https://media.graphassets.com/5adY3PmzSo6ZRTc7f9YN',
-    height: 500,
-    width: 1920,
-  },
-  about: [
-    {
-      html: '<h3>Project Brief</h3><p>We need an eco-friendly package. design with a paper package, 3 products with different colors, and the user can identify what type of this sugar is used for.</p>',
-    },
-  ],
-  gallery: [
-    {
-      url: 'https://media.graphassets.com/10Fa9WZWShOaBunJ8Tmr',
-      height: 1500,
-      width: 2100,
-    },
-    {
-      url: 'https://media.graphassets.com/jwaCyweJRTO1AWn2JPDw',
-      height: 1500,
-      width: 2100,
-    },
-    {
-      url: 'https://media.graphassets.com/Z0qRjcsMSUuQEaccDxlg',
-      height: 1500,
-      width: 2100,
-    },
-    {
-      url: 'https://media.graphassets.com/IMtn9wiKRvKwvIl0DuDd',
-      height: 1500,
-      width: 2100,
-    },
-  ],
-  identities: [],
-  color: [],
-  conclusion: [],
-  relatedProject: [
-    {
-      title: 'Warangkana',
-      tagline: 'Whisky is liquid sunshine',
-      tag: ['Packaging'],
-      slug: 'warangkana',
-      coverImage: {
-        url: 'https://media.graphassets.com/R84jcu5hR10iy9loXthX',
-        width: 3713,
-        height: 1500,
-      },
-    },
-  ],
-}
-
-export const ProjectFinanceFlow = {
-  title: 'Finance Flow',
-  projectType: 'APP',
-  featured: true,
-  excerpt:
-    'FinanceFlow is a market-leading personal finance manager, built to help you save money, plan for the future, and see all your finances in one place.',
-  tagline: 'Personal Finance, Budget & Expense Tracker',
-  slug: 'finance-flow',
-  tag: ['UI Design', 'Graphics Design'],
-  projectCategory: [
-    {
-      title: 'Graphic Design',
-      slug: 'graphic-design',
-    },
-    {
-      title: '— User Interface',
-      slug: 'ui-design',
-    },
-  ],
-  headerType: {
-    selectHeaderType: 'FULL',
-    headerGallery: [],
-  },
-  coverImage: {
-    url: 'https://media.graphassets.com/NcoILFZxTjlUfjdyuouQ',
-  },
-  colorIdentity: {
-    rgba: {
-      g: 195,
-      b: 255,
-      r: 152,
-    },
-    hex: '#98c3ff',
-  },
-  client: 'EliteSoft Co., LTD.',
-  industry: 'Software House',
-  projectDate: 'May, 2021',
-  services: 'UX and UI',
-  introduction: [
-    {
-      html: '<h3>FinanceFlow – Personal Finance, Budget &amp; Expense Tracker</h3><p>FinanceFlow is a market-leading personal finance manager, built to help you save money, plan for the future, and see all your finances in one place. With FinanceFlow you can stay on top of your daily expenses automatically with bank synchronization, dive into weekly reports on your spending, manage debt, and track bills. Share specific features with loved ones to get on top of your budgets together.</p>',
-    },
-  ],
-  bannerOption: false,
-  bannerImage: {
-    url: 'https://media.graphassets.com/d3j5qTf9SiOR0E2o2Mi4',
-    height: 200,
-    width: 1000,
-  },
-  about: [
-    {
-      html: '<h3>What We Delivered</h3><p>FinanceFlow is a money manager and bill tracker designed to help you from day one. With continuous financial insights, you’re able to stay in control of your personal finance and budget for the long term.</p>',
-    },
-  ],
-  gallery: [
-    {
-      url: 'https://media.graphassets.com/jWnXG4WPSJyLt5JWzMiJ',
-      height: 1376,
-      width: 681,
-    },
-    {
-      url: 'https://media.graphassets.com/BBl0FDcTRF6gA4dNU7QE',
-      height: 1376,
-      width: 681,
-    },
-    {
-      url: 'https://media.graphassets.com/M5s15A4aREmo06xVeZK0',
-      height: 1376,
-      width: 681,
-    },
-    {
-      url: 'https://media.graphassets.com/KCkVKybeRaOlhuJf1Axg',
-      height: 1376,
-      width: 681,
-    },
-    {
-      url: 'https://media.graphassets.com/Y2pXqicOTrScGQYFAWA8',
-      height: 1376,
-      width: 681,
-    },
-    {
-      url: 'https://media.graphassets.com/Dp9Ty6gxSpNwzTFjOOZJ',
-      height: 1376,
-      width: 681,
-    },
-    {
-      url: 'https://media.graphassets.com/mwGfHAP5SzKmjwLdb7CW',
-      height: 1376,
-      width: 681,
-    },
-  ],
-  identities: [
-    {
-      html: '<h3>Serenity • Stability • Inspiration</h3><p>Blue is a primary color across all models of color space. It is the color of the ocean and the sky. iIt often symbolizes serenity, stability, inspiration, wisdom, or health. It can be a calming color and symbolize reliability.</p><p>In the Catholic Church, the Virgin Mary is most often depicted wearing blue, to symbolize being &quot;full of grace&quot; by divine favor. Blue is widely used for baby boys&#39; clothes or bedrooms, although the reason blue is so strongly associated with boys is debated. Blue can also mean sadness in most cultures. It can also be associated with life</p>',
-    },
-  ],
-  color: [
-    {
-      hex: '#2d65dc',
-      name: 'Mariner',
-      textColor: '#FFFFFF',
-    },
-    {
-      hex: '#98c3ff',
-      name: 'Anakiwa',
-      textColor: '#333333',
-    },
-    {
-      hex: '#4e9bd8',
-      name: 'Havelock Blue',
-      textColor: '#FFFFFF',
-    },
-  ],
-  conclusion: [
-    {
-      html: '<p>FinanceFlow was built on the idea that knowing is better than hoping. We make apps for people who ask tough questions and want real answers.</p>',
-    },
-  ],
-  relatedProject: [
-    {
-      title: 'KANDA Assistant',
-      tagline: 'AI powered startup solutions',
-      tag: ['UI Design', 'Graphics Design'],
-      slug: 'kanda-assistant',
-      coverImage: {
-        url: 'https://media.graphassets.com/ZAjvFJR2RKWreBZ1xsxQ',
-        width: 2250,
-        height: 1500,
-      },
-    },
-    {
+export const MockProject: Project = {
       title: 'Ciao',
-      tagline: 'Peer-to-peer film accessories rental platform',
-      tag: ['UI Design', 'Graphics Design'],
       slug: 'ciao',
+      id: 'clwqhktmw1m9k07zr81jvvfiu',
+      tagline: 'Peer-to-peer film accessories rental platform',
+      excerpt:
+        'Peer-to-peer film accessories rental platform that enables passionate filmmakers and production',
+      featured: true,
+      tag: ['Film production', 'Marketplace'],
+      website: null,
+      updatedAt: '2024-05-28T17:36:40.264232+00:00',
+      projectType: PROJECT.TYPE.APP,
+      projectCategory: [
+        {
+          title: 'Graphic Design',
+          slug: 'graphic-design',
+        },
+        {
+          title: '— User Interface',
+          slug: 'graphic-design-user-interface',
+        },
+      ],
       coverImage: {
         url: 'https://media.graphassets.com/yNJIZjwSj2Qlq9F852ZA',
         width: 3840,
         height: 2160,
+        mimeType: 'image/jpeg',
       },
-    },
-  ],
+      colorIdentity: {
+        hex: '#574eae',
+      },
+      header: {
+        selectHeaderType: PROJECT.HEADER.FULL,
+        headerGallery: [
+          {
+            url: 'https://media.graphassets.com/yNJIZjwSj2Qlq9F852ZA',
+            width: 3840,
+            height: 2160,
+            mimeType: 'image/jpeg',
+          },
+        ],
+      },
+      projectInfo: {
+        infoType: PROJECT.INFO.INLINE_GRID,
+        services: 'UI Design',
+        industry: 'Film',
+        date: '2021-01-14',
+        client: '-',
+      },
+      blocks: [
+        {
+          blockType: PROJECT.BLOCK_TYPE.CONTENT,
+          number: '01',
+          title: 'Introduction',
+          content: {
+            html: '<h3>Revolutionizing Film Production: The Peer-to-Peer Rental App</h3><p>Our platform is a game-changer for filmmakers and production enthusiasts, offering a unique peer-to-peer rental service. With our app, users can easily rent high-quality film accessories, such as cameras, lenses, and other essential gear, from fellow creators in their vicinity. This innovative approach not only supports the dreams of aspiring filmmakers but also promotes a community of resource-sharing and collaboration.</p>',
+          },
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.IMAGE,
+          title: null,
+          description: null,
+          imageType: PROJECT.IMAGE.BANNER_LOGO,
+          images: [
+            {
+              url: 'https://media.graphassets.com/2zPTyEPgTtKKqVCOp6I3',
+              width: 1390,
+              height: 564,
+            },
+          ],
+          fillColor: null,
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.CONTENT,
+          number: '02',
+          title: 'About',
+          content: {
+            html: '<h3>A Vast Repository of Filmmaking Tools</h3><p>Our app boasts an extensive collection of over 2,000 products across more than 10 categories, ensuring that users can find exactly what they need for their projects. From cameras to studio setups, we offer a comprehensive rental service that includes a diverse range of brands and models. Our advanced search algorithms are designed to connect users with the perfect equipment, catering to both seasoned professionals and budding artists.</p>',
+          },
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.IMAGE,
+          title: null,
+          description: null,
+          imageType: PROJECT.IMAGE.MOBILE_MOCKUP,
+          images: [
+            {
+              url: 'https://media.graphassets.com/4lkVyQSCS96B7MnlrQlL',
+              width: 681,
+              height: 1376,
+            },
+            {
+              url: 'https://media.graphassets.com/lrXLHFvMQZGkMYypzkBP',
+              width: 681,
+              height: 1376,
+            },
+            {
+              url: 'https://media.graphassets.com/j0xFQmajQRSW7XZd44yt',
+              width: 681,
+              height: 1376,
+            },
+            {
+              url: 'https://media.graphassets.com/1XsD2lsRQYCcLkR9wlph',
+              width: 681,
+              height: 1376,
+            },
+            {
+              url: 'https://media.graphassets.com/sjj59jpkSq2Ro5vQO8Rr',
+              width: 681,
+              height: 1376,
+            },
+            {
+              url: 'https://media.graphassets.com/lqKYyVkUSpCjrNixumoZ',
+              width: 681,
+              height: 1376,
+            },
+            {
+              url: 'https://media.graphassets.com/YJzgPy6fQW6GJryJFavq',
+              width: 681,
+              height: 1376,
+            },
+          ],
+          fillColor: null
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.CONTENT,
+          number: '03',
+          title: 'Unique Selling Points',
+          content: {
+            html: '<h3>Why Choose Our App?</h3><ul><li><div><strong>Accessibility: </strong>Rent equipment from a wide array of categories and brands, right at your fingertips.</div></li><li><div><strong>Variety:</strong> With over 1,000 models, find the exact tool you need for your creative endeavors.</div></li><li><div><strong>Community-Driven:</strong> Connect with a network of filmmakers and share resources efficiently.</div></li></ul><p></p>',
+          },
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.COLOR_PALETTE,
+          color: [
+            {
+              hex: '#574eae',
+              name: 'Blue Violet',
+              textColor: '#d9c7cf',
+            },
+            {
+              hex: '#d9c7cf',
+              name: 'Lola',
+              textColor: '#383838',
+            },
+            {
+              hex: '#383838',
+              name: 'Mine Shaft',
+              textColor: '#d9c7cf',
+            },
+          ],
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.CONTENT,
+          number: '04',
+          title: 'Conclusion',
+          content: {
+            html: '<h3>Filling the Gap in the Market</h3><p>While established rental services like BorrowLenses and LensRentals cater to professionals with a clear understanding of their return on investment, our platform is tailored for those who are advancing their craft in filmmaking. We bridge the gap, providing easy access to quality equipment without the need for hefty investments, making the art of filmmaking more accessible to all.</p>',
+          },
+        },
+        {
+          blockType: PROJECT.BLOCK_TYPE.CONTENT,
+          number: '05',
+          title: 'Future Directions',
+          content: {
+            html: '<h3>Expanding Horizons</h3><p>Looking ahead, we aim to enhance our platform with features like real-time availability tracking, user reviews, and a reward system for frequent renters. Our goal is to create a seamless rental experience that empowers every filmmaker&#39;s creative journey.</p>',
+          },
+        },
+      ],
+      relatedProjects: [
+        {
+          title: 'Finance Flow',
+          tagline: 'Personal Finance, Budget & Expense Tracker',
+          tag: [],
+          slug: 'finance-flow',
+          coverImage: {
+            url: 'https://media.graphassets.com/NcoILFZxTjlUfjdyuouQ',
+            width: 3840,
+            height: 2160,
+            mimeType: 'image/jpeg',
+          },
+        },
+        {
+          title: 'KANDA Assistant',
+          tagline: 'AI powered startup solutions',
+          tag: [],
+          slug: 'kanda-assistant',
+          coverImage: {
+            url: 'https://media.graphassets.com/ZAjvFJR2RKWreBZ1xsxQ',
+            width: 2250,
+            height: 1500,
+            mimeType: 'image/jpeg',
+          },
+        },
+      ],
 }

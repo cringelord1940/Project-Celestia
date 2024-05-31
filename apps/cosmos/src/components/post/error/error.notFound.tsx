@@ -3,9 +3,9 @@ import Link from 'next/link'
 const NotFound = ({ title, backURL }: { title: string; backURL: string }) => {
   return (
     <>
-      <div className='m-container flex w-full flex-col items-center justify-center'>
+      <div className='flex h-full w-full flex-col items-center justify-center'>
         <h2 className='text-4xl'>
-          <span className='text-quaternary-2 dark:text-primary-0 font-bold'>
+          <span className='font-bold text-primary'>
             {title}
           </span>{' '}
           NOT FOUND

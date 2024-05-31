@@ -16,6 +16,10 @@ export enum HEADER {
   OVERLAP = 'OVERLAP',
 }
 
+export enum INFO {
+  INLINE_GRID = 'INLINE_GRID',
+}
+
 export enum BLOCK_TYPE {
   COLOR_PALETTE = 'COLOR_PALETTE',
   CONTENT = 'CONTENT',
@@ -28,9 +32,11 @@ export enum BLOCK_TYPE {
 
 export enum IMAGE {
   MOBILE_MOCKUP = 'MOBILE_MOCKUP',
-  ONE_PHOTO = 'ONE_PHOTO',
+  ONE_IMAGE = 'ONE_IMAGE',
+  TWO_IMAGE = 'TWO_IMAGE',
   GALLERY_4 = 'GALLERY_4',
   BANNER = 'BANNER',
+  BANNER_LOGO = 'BANNER_LOGO',
 }
 
 export enum VIDEO_SRC {
@@ -40,5 +46,5 @@ export enum VIDEO_SRC {
 
 export enum MARQUEE {
   AUTO = 'AUTO',
-  SCROLLING = 'SCROLLING'
+  SCROLLING = 'SCROLLING',
 }

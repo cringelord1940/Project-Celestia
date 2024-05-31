@@ -10,7 +10,7 @@ export const runtimeEnv = {
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   TOKEN: process.env.TOKEN,
   // ** DATABASE
-  GRAPHQL_CONTENT_URL: process.env.GRAPHQL_CONTENT_URL,
+  GRAPHQL_POST_URL: process.env.GRAPHQL_POST_URL,
   GRAPHQL_PROJECT_URL: process.env.GRAPHQL_PROJECT_URL,
   GRAPHQL_SHOP_URL: process.env.GRAPHQL_SHOP_URL,
   MONGODB_URI: process.env.MONGODB_URI,

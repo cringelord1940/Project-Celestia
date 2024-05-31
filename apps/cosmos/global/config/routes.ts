@@ -22,10 +22,10 @@ export const routes: Route[] = [
     title: 'PROJECTS',
     path: '/project',
   },
-  {
-    title: 'BLOG',
-    path: '/post',
-  },
+  // {
+  //   title: 'BLOG',
+  //   path: '/post',
+  // },
   {
     title: 'APP',
     path: '/app',

@@ -1,29 +1,29 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { Metadata } from 'next'
+import type { GetProjectResult } from '@types'
 import { gql } from 'graphql-request'
 import * as FALLBACK from '@components/post/error'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
 import { FETCH } from '@/enums'
 import { getProject } from '@/utils'
-import { PROJECT } from '@/enums'
-import {
-  WebProjectTemplate,
-  AppProjectTemplate,
-  DesktopAppProjectTemplate,
-  ProductProjectTemplate,
-  BrandingProjectTemplate,
-  MovieProjectTemplate,
-} from './templates'
+import { Layout } from './page.layout'
+import { ContentLayout } from './content.layout'
+import { Header } from './header'
+import { ProjectInfo } from './info'
+import { Blocks } from './blocks'
+import { RelatedProjects } from './relatedProject'
 
 type PageProps = {
   params: { slug: string }
+  searchParams: { preview: string }
 }
 
 const endpointURL = env.GRAPHQL_PROJECT_URL
 
 export const generateMetadata = async ({
   params: { slug },
+  searchParams: { preview },
 }: PageProps): Promise<Metadata> => {
   try {
     const requestQL = gql`
@@ -39,10 +39,19 @@ export const generateMetadata = async ({
         }
       }
     `
+    const HeaderOption =
+      preview === 'true'
+        ? {
+            'gcms-stage': 'DRAFT',
+          }
+        : {}
     const { project_old: project } = await useFetchQL(
       endpointURL,
       { query: requestQL, variables: { slug } },
-      180,
+      {
+        revalidate: 180,
+        headers: HeaderOption,
+      },
     )
 
     return {
@@ -67,7 +76,7 @@ export const generateMetadata = async ({
 }
 
 async function Page({ params: { slug } }: PageProps) {
-  const data = await getProject(slug)
+  const data: GetProjectResult = await getProject(slug)
 
   if (data.status === FETCH.ERROR) {
     return (
@@ -83,22 +92,28 @@ async function Page({ params: { slug } }: PageProps) {
     return <FALLBACK.NotFound title='PROJECT' backURL='/project' />
   }
 
-  // switch (data.project.projectType) {
-  //   case PROJECT.TYPE.WEB:
-  //     return <WebProjectTemplate project={data.project} />
-  //   case PROJECT.TYPE.APP:
-  //     return <AppProjectTemplate project={data.project} />
-  //   case PROJECT.TYPE.DESKTOP_APP:
-  //     return <DesktopAppProjectTemplate project={data.project} />
-  //   case PROJECT.TYPE.PRODUCT:
-  //     return <ProductProjectTemplate project={data.project} />
-  //   case PROJECT.TYPE.BRANDING:
-  //     return <BrandingProjectTemplate project={data.project} />
-  //   case PROJECT.TYPE.MOVIE:
-  //     return <MovieProjectTemplate project={data.project} />
-  //   default:
-      return <></>
-  // }
+  const project = data.project
+
+  return (
+    <>
+      <Layout
+        title={project.title}
+        tagline={project.tagline}
+        slug={project.slug}
+      >
+        <Header
+          header={project.header}
+          title={project.title}
+          tag={project.tag}
+        />
+        <ContentLayout>
+          <ProjectInfo projectInfo={project.projectInfo} />
+          <Blocks blocks={project.blocks} />
+          <RelatedProjects projects={project.relatedProjects} />
+        </ContentLayout>
+      </Layout>
+    </>
+  )
 }
 
 export default Page

@@ -21,7 +21,7 @@ export const serverSchema = {
   ),
   TOKEN: z.string().min(1),
   // ** DATABASE
-  GRAPHQL_CONTENT_URL: z.string().url(),
+  GRAPHQL_POST_URL: z.string().url(),
   GRAPHQL_PROJECT_URL: z.string().url(),
   GRAPHQL_SHOP_URL: z.string().url(),
   MONGODB_URI: z.string().url(),

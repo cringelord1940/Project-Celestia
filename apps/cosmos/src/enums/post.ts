@@ -13,12 +13,20 @@ export enum CONTENT_BLOCK {
 
 export enum BLOCK_TYPE {
   CONTENT = 'CONTENT',
-  CONTENT_PADDING = 'CONTENT_PADDING',
-  CODE = 'CODE',
-  QUOTE = 'QUOTE',
   IMAGE = 'IMAGE',
+  QUOTE = 'QUOTE',
+  CODE = 'CODE',
   SEPARATOR = 'SEPARATOR',
   REFERENCE = 'REFERENCE',
+}
+
+export enum HEADING_HIERARCHY {
+  NONE = 'NONE',
+  TWO = 'h2',
+  THREE = 'h3',
+  FOUR = 'h4',
+  FIVE = 'h5',
+  SIX = 'h6',
 }
 
 export enum IMAGE {
@@ -30,4 +38,18 @@ export enum IMAGE {
 export enum QUOTE {
   BLOCK = 'BLOCK',
   RICH = 'RICH',
+}
+
+export enum CODE_LANGUAGE {
+  HTML = 'html',
+  CSS = 'css',
+  TypeScript = 'TypeScript',
+  Rust = 'rust',
+}
+
+export enum SEPARATOR {
+  DOT = 'DOT',
+  LINE_SM = 'LINE_SM',
+  LINE_XL = 'LINE_XL',
+  JUST_PADDING = 'JUST_PADDING',
 }

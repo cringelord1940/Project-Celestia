@@ -11,6 +11,7 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 yarn
+bun.lockb
 
 # testing
 /coverage
@@ -68,3 +69,7 @@ lerna-debug.log*
 
 # Vercel
 .vercel
+
+## Panda
+styled-system
+styled-system-studio

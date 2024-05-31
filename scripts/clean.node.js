@@ -4,6 +4,7 @@ const { glob } = require('glob')
 
 const directoriesToRemove = [
   'pnpm-lock.yaml',
+  'bun.lockb',
   'node_modules',
   'apps/**/node_modules',
   'packages/**/node_modules',

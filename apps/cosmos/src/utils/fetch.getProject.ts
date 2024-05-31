@@ -1,73 +1,107 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import type { GetProject } from '@types'
 import { gql } from 'graphql-request'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
 import { FETCH } from '@/enums'
 
-const getProject = async (slug: string) => {
+const getProject: GetProject = async (slug, isPreview) => {
   try {
     const requestQL = gql`
       query Project($slug: String!) {
-        project_old(where: { slug: $slug }) {
+        project(where: { slug: $slug }) {
           title
-          projectType
-          featured
-          excerpt
-          tagline
           slug
+          id
+          tagline
+          excerpt
+          featured
           tag
-          # projectCategory {
-          #   title
-          #   slug
-          # }
-          headerType {
-            selectHeaderType
-            headerGallery {
-              height
-              width
-              url
-            }
+          website
+          updatedAt
+          projectType
+          projectCategory {
+            title
+            slug
           }
           coverImage {
             url
+            width
+            height
+            mimeType
           }
           colorIdentity {
-            rgba {
-              g
-              b
-              r
-            }
             hex
           }
-          client
-          industry
-          projectDate
-          services
-          introduction {
-            html
+          header {
+            selectHeaderType
+            headerGallery {
+              url
+              width
+              height
+              mimeType
+            }
           }
-          bannerOption
-          bannerImage {
-            url
-            height
-            width
+          projectInfo {
+            infoType
+            services
+            industry
+            date
+            client
           }
-          about {
-            html
+          blocks {
+            ... on Content {
+              blockType
+              number
+              title
+              content {
+                html
+              }
+            }
+            ... on Image {
+              blockType
+              title
+              description
+              imageType
+              images {
+                url
+                width
+                height
+              }
+              fillColor {
+                hex
+              }
+            }
+            ... on Video {
+              blockType
+              title
+              source
+              url
+            }
+            ... on ColorPalette {
+              blockType
+              color
+            }
+            ... on Grid {
+              blockType
+              title
+              items
+            }
+            ... on Marquee {
+              blockType
+              marqueeType
+              line
+              rotate
+              word
+            }
+            ... on Quote {
+              blockType
+              text {
+                html
+              }
+            }
           }
-          gallery {
-            url
-            height
-            width
-          }
-          identities {
-            html
-          }
-          color
-          conclusion {
-            html
-          }
-          relatedProject {
+          relatedProjects {
             title
             tagline
             tag
@@ -76,16 +110,26 @@ const getProject = async (slug: string) => {
               url
               width
               height
+              mimeType
             }
           }
         }
       }
     `
 
-    const { project_old: project } = await useFetchQL(
+    const HeaderOption = isPreview
+      ? {
+          'gcms-stage': 'DRAFT',
+        }
+      : {}
+
+    const { project } = await useFetchQL(
       env.GRAPHQL_PROJECT_URL,
       { query: requestQL, variables: { slug } },
-      180,
+      {
+        revalidate: 180,
+        headers: HeaderOption,
+      },
     )
 
     return { status: FETCH.SUCCESS, project }

@@ -18,6 +18,10 @@ export type Content =
     }
   | ImageContent
 
+export type Raw = {
+  children: Content[]
+}
+
 export type RawContent = {
   children: TextContent[] | ImageContent[] | Content[]
 }

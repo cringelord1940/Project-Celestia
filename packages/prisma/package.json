@@ -8,7 +8,7 @@
     "db:generate:acc": "prisma generate --accelerate",
     "db:push": "prisma db push",
     "db-studio": "prisma studio",
-    "db": "pnpm db:generate && pnpm db:push",
+    "db": "bun db:generate && bun db:push",
     "build": "tsc"
   },
   "prisma": {

@@ -6,7 +6,8 @@
   "scripts": {
     "gql:clean": "rimraf ./schema/graphql.schema.ts",
     "gql:gen": "ts-node generate-typings.ts",
-    "gql": "pnpm run \"/^gql:.*/\"",
+    "gql": "bun gql:clean && bun gql:gen",
+    "pnpm:gql": "pnpm run \"/^gql:.*/\"",
     "build": "tsc"
   },
   "keywords": [],

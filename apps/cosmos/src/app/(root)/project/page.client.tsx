@@ -19,7 +19,7 @@ type tProject = {
   }
 }
 
-const Client = ({ projects }: { projects: any[] }) => {
+const Client = ({ projects }: { projects: tProject[] }) => {
   projects = [...projects, ...projects, ...projects]
 
   const [onScroll] = useUiState(useShallow((st) => [st.onScroll]))

@@ -1,3 +1,5 @@
+// cSpell: disable
+
 export const ProjectsOverviewMockData = {
   projects_old: [
     {

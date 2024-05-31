@@ -1,8 +1,11 @@
 const useFetchQL = async (
   endpointURL: string | undefined | null,
   ql: { query: string; variables?: any },
-  revalidate: number,
-  options?: { headers?: any; next?: any },
+  options?: {
+    headers?: Record<string, string> | {}
+    revalidate?: number
+    next?: Record<string, any> | {}
+  },
   callback?: () => void,
 ) => {
   if (!endpointURL) {
@@ -16,7 +19,7 @@ const useFetchQL = async (
       ...options?.headers,
     },
     body: JSON.stringify(ql),
-    next: { revalidate: revalidate, ...options?.next },
+    next: { revalidate: options.revalidate || 0, ...options?.next },
   }).then((res) => res.json())
 
   if (callback) {
