@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import type { GetPostResult } from '@types'
 import { FETCH } from '@/enums'
 import { gql } from 'graphql-request'
-import clsx from 'clsx'
+// import clsx from 'clsx'
 import * as FALLBACK from '@components/post/error'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
@@ -21,59 +21,59 @@ type PageProps = {
 
 const endpointURL = env.GRAPHQL_POST_URL
 
-// export const generateMetadata = async ({
-//   params: { slug },
-//   searchParams: { preview },
-// }: PageProps): Promise<Metadata> => {
-//   try {
-//     const requestQL = gql`
-//       query Post($slug: String!) {
-//         post(where: { slug: $slug }) {
-//           title
-//           excerpt
-//           coverImage {
-//             url
-//             width
-//             height
-//           }
-//         }
-//       }
-//     `
-//     const HeaderOption =
-//       preview === 'true'
-//         ? {
-//             'gcms-stage': 'DRAFT',
-//           }
-//         : {}
-//     const { post } = await useFetchQL(
-//       endpointURL,
-//       { query: requestQL, variables: { slug } },
-//       {
-//         revalidate: 180,
-//         headers: HeaderOption,
-//       },
-//     )
+export const generateMetadata = async ({
+  params: { slug },
+  searchParams: { preview },
+}: PageProps): Promise<Metadata> => {
+  try {
+    const requestQL = gql`
+      query Post($slug: String!) {
+        post(where: { slug: $slug }) {
+          title
+          excerpt
+          coverImage {
+            url
+            width
+            height
+          }
+        }
+      }
+    `
+    const HeaderOption =
+      preview === 'true'
+        ? {
+            'gcms-stage': 'DRAFT',
+          }
+        : {}
+    const { post } = await useFetchQL(
+      endpointURL,
+      { query: requestQL, variables: { slug } },
+      {
+        revalidate: 180,
+        headers: HeaderOption,
+      },
+    )
 
-//     return {
-//       title: post.title,
-//       description: post.excerpt,
-//       openGraph: {
-//         title: post.title,
-//         images: [post.coverImage],
-//       },
-//       twitter: {
-//         card: 'summary_large_image',
-//         title: post.title,
-//         description: post.excerpt,
-//         images: [post.coverImage],
-//       },
-//     }
-//   } catch (error) {
-//     return {
-//       title: 'Post not found | IceJiVerse',
-//     }
-//   }
-// }
+    return {
+      title: post.title,
+      description: post.excerpt,
+      openGraph: {
+        title: post.title,
+        images: [post.coverImage],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.title,
+        description: post.excerpt,
+        images: [post.coverImage],
+      },
+    }
+  } catch (error) {
+    return {
+      title: 'Post not found | IceJiVerse',
+    }
+  }
+}
 
 async function Page({ params: { slug } }: PageProps) {
   const data: GetPostResult = await getPost(slug)
@@ -104,7 +104,7 @@ async function Page({ params: { slug } }: PageProps) {
         />
         <ContentLayout>
           <Blocks blocks={post.blocks} />
-          <div className='container z-10 w-screen px-4 xl:w-[1024px]'>
+          <div className='container z-10 w-screen px-4 xl:w-[1024px] mt-48'>
             <RelatedPosts posts={post.relatedPosts} tag={post.tag} />
           </div>
         </ContentLayout>

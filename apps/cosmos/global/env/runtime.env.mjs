@@ -12,7 +12,7 @@ export const runtimeEnv = {
   // ** DATABASE
   GRAPHQL_POST_URL: process.env.GRAPHQL_POST_URL,
   GRAPHQL_PROJECT_URL: process.env.GRAPHQL_PROJECT_URL,
-  GRAPHQL_SHOP_URL: process.env.GRAPHQL_SHOP_URL,
+  // GRAPHQL_SHOP_URL: process.env.GRAPHQL_SHOP_URL,
   MONGODB_URI: process.env.MONGODB_URI,
   ACCELERATE_URI: process.env.ACCELERATE_URI,
   REDIS_URL: process.env.REDIS_URL,

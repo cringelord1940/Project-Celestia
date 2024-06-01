@@ -44,6 +44,7 @@ export type Color = {
 
 export type ColorPaletteBlock = {
   blockType: `${PROJECT.BLOCK_TYPE.COLOR_PALETTE}`
+  colorPaletteType: `${PROJECT.COLOR_PALETTE}`
   color: Color[]
 }
 
@@ -57,6 +58,7 @@ export type GridItem = {
 export type GridBlock = {
   blockType: `${PROJECT.BLOCK_TYPE.GRID}`
   title: string | null
+  gridType: `${PROJECT.GRID}`
   items: GridItem[]
 }
 

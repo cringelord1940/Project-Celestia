@@ -39,6 +39,18 @@ export enum IMAGE {
   BANNER_LOGO = 'BANNER_LOGO',
 }
 
+export enum COLOR_PALETTE {
+  DEFAULT = 'DEFAULT',
+  MINIMAL = 'MINIMAL',
+  CARD = 'CARD',
+}
+
+export enum GRID {
+  DEFAULT = 'DEFAULT',
+  MINIMAL = 'MINIMAL',
+  CARD = 'CARD',
+}
+
 export enum VIDEO_SRC {
   VIMEO = 'VIMEO',
   YOUTUBE = 'YOUTUBE',

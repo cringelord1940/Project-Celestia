@@ -23,7 +23,7 @@ export const serverSchema = {
   // ** DATABASE
   GRAPHQL_POST_URL: z.string().url(),
   GRAPHQL_PROJECT_URL: z.string().url(),
-  GRAPHQL_SHOP_URL: z.string().url(),
+  // GRAPHQL_SHOP_URL: z.string().url(),
   MONGODB_URI: z.string().url(),
   ACCELERATE_URI: z.string().url(),
   REDIS_URL: z.string().url(),

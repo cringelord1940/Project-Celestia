@@ -1,1 +1,1 @@
-export { useScrollState } from './useScrollState'
+export { useAnimateObjectWhenScroll } from './useAnimateObjectWhenScroll'

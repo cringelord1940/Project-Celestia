@@ -4,8 +4,7 @@ import { gql } from 'graphql-request'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
 import { FETCH } from '@/enums'
-
-import { MockPost } from '@/mocks/post.mock'
+// import { MockPost } from '@/mocks/post.mock'
 
 export const getPost: GetPost = async (slug, isPreview) => {
   const endpointURL = env.GRAPHQL_POST_URL
@@ -45,7 +44,7 @@ export const getPost: GetPost = async (slug, isPreview) => {
               title
               codeLanguage
               code {
-                html
+                text
               }
             }
             ... on Image {
@@ -94,22 +93,22 @@ export const getPost: GetPost = async (slug, isPreview) => {
       }
     `
 
+    // const post = MockPost
+
     const HeaderOption = isPreview
       ? {
           'gcms-stage': 'DRAFT',
         }
       : {}
 
-    // const { post } = await useFetchQL(
-    //   endpointURL,
-    //   { query: requestQL, variables: { slug } },
-    //   {
-    //     revalidate: 180,
-    //     headers: HeaderOption,
-    //   },
-    // )
-
-    const post = MockPost
+    const { post } = await useFetchQL(
+      endpointURL,
+      { query: requestQL, variables: { slug } },
+      {
+        revalidate: 180,
+        headers: HeaderOption,
+      },
+    )
 
     return { status: FETCH.SUCCESS, post }
   } catch (error) {

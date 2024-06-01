@@ -37,7 +37,9 @@ export type CodeBlock = {
   blockType: `${POST.BLOCK_TYPE.CODE}`
   title: string | null
   codeLanguage: `${POST.CODE_LANGUAGE}`
-  code: RichText
+  code: {
+    text: string
+  }
 }
 
 export type SeparatorBlock = {

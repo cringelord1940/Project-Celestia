@@ -5,6 +5,7 @@
 /* @layer base { */
 :root {
   --background: 48 100% 98%;
+  --background-deep: 217 100% 100%;
   --foreground: 217 0% 0%;
 
   --background-start-rgb: 214, 219, 220;
@@ -54,6 +55,7 @@
 
 .dark {
   --background: 0 0% 10%;
+  --background-deep: 0 0% 0%;
   --foreground: 217 0% 100%;
 
   --background-start-rgb: 26, 26, 26;
@@ -465,36 +467,6 @@ canvas {
     4px -6px 0 white,
     4px -8px 0 white;
   @apply absolute left-[2px] top-1 h-1 w-1 rotate-45 bg-foreground;
-}
-
-/* *! Others */
-
-.Project-header > h3 {
-  @apply text-3xl font-semibold;
-}
-
-.Project-header > p {
-  @apply mt-6 font-light opacity-80;
-}
-
-.PostTextTab {
-  @apply pl-8 lg:pl-16;
-}
-
-.m-container {
-  height: calc(100vh - 3.5rem);
-  height: calc(100dvh - 3.5rem);
-  @apply sm:h-dvh;
-}
-
-.m-nav-canvas {
-  height: calc(100vh - 4rem);
-  height: calc(100dvh - 4rem);
-}
-
-.m-state-page {
-  top: calc(100vh - 5.625rem);
-  top: calc(100dvh - 5.625rem);
 }
 
 /* *! NavBar */

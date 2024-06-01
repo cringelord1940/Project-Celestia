@@ -47,7 +47,10 @@ function Extend(Plugins?: PluginsConfig) {
           border: 'hsl(var(--border))',
           input: 'hsl(var(--input))',
           ring: 'hsl(var(--ring))',
-          background: 'hsl(var(--background))',
+          background: {
+            DEFAULT: 'hsl(var(--background))',
+            deep: 'hsl(var(--background-deep))',
+          },
           foreground: 'hsl(var(--foreground))',
           primary: {
             DEFAULT: 'hsl(var(--primary))',

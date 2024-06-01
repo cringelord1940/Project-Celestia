@@ -2,39 +2,48 @@
 
 import { ImageBlockProps } from './image.common'
 import Image from 'next/image'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useAnimateObjectWhenScroll } from '@nexel/cosmos/animations/hooks'
 
 export const MobileMockupImages: React.FC<ImageBlockProps> = ({ image }) => {
-  const { scrollY } = useScroll()
-  const X = useTransform(scrollY, [2000, 2800], [0, -820])
-  const springX = useSpring(X, { damping: 20, mass: 0.1, stiffness: 60 })
+  const { ref, motionValue } = useAnimateObjectWhenScroll({
+    setScrollRange: (rect) => (rect ? [rect.top - 1000, rect.bottom] : [0, 0]),
+    setValueRange: (rect) => (rect ? [0, -rect.width] : [0, 0]),
+  })
+
   return (
-    <motion.div className='w-full'>
+    <>
       <motion.div
-        style={{ x: springX }}
-        className='inline-flex space-x-6 overflow-visible'
+        className='my-[6rem] w-full'
+        //  ref={$container}
+        ref={ref}
       >
-        {image.images.map((v, i: number) => (
-          <div
-            className='xxl:h-[600px] xxl:w-[300px] relative h-[300px] w-[140px] sm:h-[380px] sm:w-[180px]'
-            key={i}
-          >
-            <Image
-              className='pointer-events-none'
-              src={v.url}
-              alt={`${image.title || 'project banner image'}_${i}`}
-              //   width={v.width}
-              //   height={v.height}
-              layout='fill'
-              objectFit='scale-down'
-              placeholder='blur'
-              blurDataURL={
-                'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-              }
-            />
-          </div>
-        ))}
+        <motion.div
+          // style={{ x: springX }}
+          style={{ x: motionValue }}
+          className='inline-flex space-x-6 overflow-visible'
+        >
+          {[...image.images, ...image.images].map((img, i: number) => (
+            <div
+              className='relative h-[60vh]'
+              style={{ aspectRatio: `${img.width} / ${img.height}` }}
+              key={i}
+            >
+              <Image
+                className='pointer-events-none'
+                src={img.url}
+                alt={`${image.title || 'project banner image'}_${i}`}
+                width={img.width}
+                height={img.height}
+                placeholder='blur'
+                blurDataURL={
+                  'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+                }
+              />
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </>
   )
 }

@@ -23,7 +23,7 @@ const getProjects = async () => {
       }
     `
 
-    const { projects_old: projects } = await useFetchQL(
+    const { projects } = await useFetchQL(
       env.GRAPHQL_PROJECT_URL,
       { query: requestQL },
       { revalidate: 180 },

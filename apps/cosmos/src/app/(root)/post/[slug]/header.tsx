@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import clsx from 'clsx'
+import { _postTag } from './style.css'
 
 interface HeaderProps {
   title: string
@@ -24,39 +26,20 @@ export const Header: React.FC<HeaderProps> = ({
   const Y = useTransform(scrollY, [0, 2000], [0, 1000])
   const springY = useSpring(Y, { damping: 20, mass: 0.1, stiffness: 60 })
 
-  const animList = {
-    initial: { x: 100 },
-    animate: {
-      x: 0,
-      transition: {
-        when: 'beforeChildren',
-        delay: 0,
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const animItem = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    transition: { type: 'tween' },
-  }
-
   return (
     <div className='relative flex h-dvh items-end justify-center overflow-hidden bg-background'>
-      <div className='container z-10 w-dvw px-4 xl:w-[1024px]'>
+      <div
+        className={clsx('container z-10 w-dvw px-4 xl:w-[1024px]', _postTag)}
+      >
         {tag && (
-          <motion.div
-            variants={animList}
-            initial='initial'
-            animate='animate'
-            className='uppercase'
-          >
+          <motion.div className='uppercase'>
             {tag.map((v: string, i: number) => (
               <motion.button
-                className='Anim AnimTranslate-4 mr-2 mt-2 rounded-md border border-foreground/40 px-2 py-1 uppercase hover:bg-primary hover:text-white dark:hover:text-black'
+                className='_post-tag'
                 key={i}
-                variants={animItem}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: i * 0.2 }}
               >
                 {v}
               </motion.button>
@@ -66,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
         <motion.h1
           initial={{ y: 300, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className='2xl:text-8xl mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl'
+          className='mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl 2xl:text-8xl'
         >
           {title}
         </motion.h1>

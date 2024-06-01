@@ -5,7 +5,7 @@ export const DefaultImage: React.FC<ImageBlockProps> = ({ image }) => {
   return (
     <>
       <div
-        className='relative flex w-full justify-center overflow-hidden rounded-lg py-8'
+        className='relative flex w-full justify-center overflow-hidden rounded-lg py-8 xl:w-[1024px]'
         style={{
           aspectRatio: `${image.images[0].width} / ${image.images[0].height}`,
         }}

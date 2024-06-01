@@ -6,5 +6,11 @@ interface CodeBlockProps {
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
-  return <></>
+  return (
+    <div className='xl:w-[1024px]'>
+      <pre>
+        <code>{code.code.text}</code>
+      </pre>
+    </div>
+  )
 }

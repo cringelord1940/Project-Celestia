@@ -1,200 +1,236 @@
 // cSpell: disable
 import type { Project } from '@types'
-import { PROJECT } from '@/enums'
+// import { PROJECT } from '@/enums'
 
 export const MockProject: Project = {
-      title: 'Ciao',
-      slug: 'ciao',
-      id: 'clwqhktmw1m9k07zr81jvvfiu',
-      tagline: 'Peer-to-peer film accessories rental platform',
-      excerpt:
-        'Peer-to-peer film accessories rental platform that enables passionate filmmakers and production',
-      featured: true,
-      tag: ['Film production', 'Marketplace'],
-      website: null,
-      updatedAt: '2024-05-28T17:36:40.264232+00:00',
-      projectType: PROJECT.TYPE.APP,
-      projectCategory: [
+  title: 'VitalLink',
+  slug: 'vitallink',
+  id: 'clwqkjhi520no07zrl9epa70h',
+  tagline: 'Where Your Health Pulse Meets the Heartbeat of Community.',
+  excerpt:
+    'Connect, Track, Thrive. Your journey to better health is now a shared adventure with our innovative app that blends fitness tracking with social networking.',
+  featured: true,
+  tag: ['Health', 'Tracking'],
+  website: null,
+  updatedAt: '2024-06-01T07:49:25.814615+00:00',
+  projectType: 'APP',
+  projectCategory: [
+    {
+      title: '— User Interface',
+      slug: 'graphic-design-user-interface',
+    },
+    {
+      title: 'Graphic Design',
+      slug: 'graphic-design',
+    },
+  ],
+  coverImage: {
+    url: 'https://media.graphassets.com/KrETP7l2RLG2TyXqIc9i',
+    width: 5000,
+    height: 3333,
+    mimeType: 'image/jpeg',
+  },
+  colorIdentity: {
+    hex: '#be3c3c',
+  },
+  header: {
+    selectHeaderType: 'FULL',
+    headerGallery: [
+      {
+        url: 'https://media.graphassets.com/KrETP7l2RLG2TyXqIc9i',
+        width: 5000,
+        height: 3333,
+        mimeType: 'image/jpeg',
+      },
+    ],
+  },
+  projectInfo: {
+    infoType: 'INLINE_GRID',
+    services: 'UI Design',
+    industry: 'Health Tech',
+    date: '2022-04-12',
+    client: 'VitalLink Co',
+  },
+  blocks: [
+    {
+      blockType: 'CONTENT',
+      number: '01',
+      title: 'Introduction',
+      content: {
+        html: '<h3>VitalLink: Where Health Meets Community</h3><p>Welcome to VitalLink, the innovative app that intertwines health tracking with the power of social networking. Designed for health enthusiasts and social butterflies alike, VitalLink offers a unique platform to stay fit and connected.</p>',
+      },
+    },
+    {
+      blockType: 'IMAGE',
+      title: null,
+      description: null,
+      imageType: 'BANNER',
+      images: [
         {
-          title: 'Graphic Design',
-          slug: 'graphic-design',
-        },
-        {
-          title: '— User Interface',
-          slug: 'graphic-design-user-interface',
+          url: 'https://media.graphassets.com/0F6uGWJ8RTKJXeDjSH1t',
+          width: 1000,
+          height: 200,
         },
       ],
+      fillColor: null,
+    },
+    {
+      blockType: 'CONTENT',
+      number: '02',
+      title: 'Overview',
+      content: {
+        html: '<p>VitalLink is more than just an app; it&#39;s a lifestyle companion that motivates users to achieve their health goals while fostering a supportive online community. By combining real-time health metrics with social engagement, we&#39;ve created a space where every milestone is celebrated and every setback is met with encouragement.</p>',
+      },
+    },
+    {
+      blockType: 'GRID',
+      title: 'Features',
+      gridType: 'MINIMAL',
+      items: [
+        {
+          title: 'Health Tracking',
+          subtitle: 'Some subtitle here (Test)',
+          description:
+            'Monitor steps, heart rate, and calorie burn with precision.',
+        },
+        {
+          title: 'Social Engagement',
+          subtitle: 'Some subtitle here (Test)',
+          description:
+            'Share achievements, set collective goals, and cheer each other on.',
+        },
+        {
+          title: 'Personal Challenges',
+          subtitle: 'Some subtitle here (Test)',
+          description:
+            'Create and participate in challenges tailored to your fitness level.',
+        },
+        {
+          title: 'Integrated Nutrition',
+          subtitle: 'Some subtitle here (Test)',
+          description:
+            'Log meals and track nutritional intake alongside fitness data.',
+        },
+      ],
+    },
+    {
+      blockType: 'IMAGE',
+      title: null,
+      description: null,
+      imageType: 'ONE_IMAGE',
+      images: [
+        {
+          url: 'https://media.graphassets.com/KfBNHqaqRleqxdIkQZ44',
+          width: 6600,
+          height: 4400,
+        },
+      ],
+      fillColor: null,
+    },
+    {
+      blockType: 'CONTENT',
+      number: '03',
+      title: 'The Design',
+      content: {
+        html: '<h3>Design Philosophy</h3><p>Our design ethos is rooted in clarity and motivation. We believe that a clean, intuitive interface is key to making health monitoring accessible, while social features should enhance the user experience, making fitness a shared journey.</p>',
+      },
+    },
+    {
+      blockType: 'COLOR_PALETTE',
+      colorPaletteType: 'DEFAULT',
+      color: [
+        {
+          hex: '#C63E40',
+          name: 'Mojo',
+          textColor: '#fff',
+        },
+      ],
+    },
+    {
+      blockType: 'CONTENT',
+      number: '04',
+      title: 'Conclusion',
+      content: {
+        html: '<h3>VitalLink is not just an app</h3><p>it&#39;s a movement towards a healthier, more connected world. It&#39;s where personal well-being aligns with communal support, creating a harmonious balance between physical health and social well-being.</p>',
+      },
+    },
+    {
+      blockType: 'IMAGE',
+      title: null,
+      description: null,
+      imageType: 'MOBILE_MOCKUP',
+      images: [
+        {
+          url: 'https://media.graphassets.com/2Nby74CrR8S9SdYae9Bb',
+          width: 1227,
+          height: 2474,
+        },
+        {
+          url: 'https://media.graphassets.com/mtEbxA0XTC2Azic3TMaz',
+          width: 1227,
+          height: 2474,
+        },
+        {
+          url: 'https://media.graphassets.com/mabjEaKRGGcjIbhXOwG0',
+          width: 1227,
+          height: 2474,
+        },
+        {
+          url: 'https://media.graphassets.com/3upNwtvKRwueHYvzdtC7',
+          width: 1227,
+          height: 2474,
+        },
+        {
+          url: 'https://media.graphassets.com/FF2nBnrRXejpzEGzwNRQ',
+          width: 1227,
+          height: 2474,
+        },
+        {
+          url: 'https://media.graphassets.com/ktseVAykQxCxlwgTF18I',
+          width: 1227,
+          height: 2474,
+        },
+        {
+          url: 'https://media.graphassets.com/msA3gSDMR3uA2z878UZK',
+          width: 1227,
+          height: 2474,
+        },
+      ],
+      fillColor: null,
+    },
+    {
+      blockType: 'CONTENT',
+      number: '05',
+      title: "What's next?",
+      content: {
+        html: '<h3>Expanding the Experience</h3><p>Looking forward, we plan to introduce virtual workout sessions, diet planning, and mental wellness resources, making VitalLink a holistic hub for all aspects of health.</p><h3>The Social Impact</h3><p>We envision VitalLink as a tool for positive change, encouraging users to take charge of their health while building meaningful connections. It&#39;s a step towards a future where technology brings us closer to our goals and to each other.</p>',
+      },
+    },
+  ],
+  relatedProjects: [
+    {
+      title: 'Ciao',
+      tagline: 'Peer-to-peer film accessories rental platform',
+      tag: ['Film production', 'Marketplace'],
+      slug: 'ciao',
       coverImage: {
         url: 'https://media.graphassets.com/yNJIZjwSj2Qlq9F852ZA',
         width: 3840,
         height: 2160,
         mimeType: 'image/jpeg',
       },
-      colorIdentity: {
-        hex: '#574eae',
+    },
+    {
+      title: 'Finance Flow',
+      tagline: 'Personal Finance, Budget & Expense Tracker',
+      tag: [],
+      slug: 'finance-flow',
+      coverImage: {
+        url: 'https://media.graphassets.com/NcoILFZxTjlUfjdyuouQ',
+        width: 3840,
+        height: 2160,
+        mimeType: 'image/jpeg',
       },
-      header: {
-        selectHeaderType: PROJECT.HEADER.FULL,
-        headerGallery: [
-          {
-            url: 'https://media.graphassets.com/yNJIZjwSj2Qlq9F852ZA',
-            width: 3840,
-            height: 2160,
-            mimeType: 'image/jpeg',
-          },
-        ],
-      },
-      projectInfo: {
-        infoType: PROJECT.INFO.INLINE_GRID,
-        services: 'UI Design',
-        industry: 'Film',
-        date: '2021-01-14',
-        client: '-',
-      },
-      blocks: [
-        {
-          blockType: PROJECT.BLOCK_TYPE.CONTENT,
-          number: '01',
-          title: 'Introduction',
-          content: {
-            html: '<h3>Revolutionizing Film Production: The Peer-to-Peer Rental App</h3><p>Our platform is a game-changer for filmmakers and production enthusiasts, offering a unique peer-to-peer rental service. With our app, users can easily rent high-quality film accessories, such as cameras, lenses, and other essential gear, from fellow creators in their vicinity. This innovative approach not only supports the dreams of aspiring filmmakers but also promotes a community of resource-sharing and collaboration.</p>',
-          },
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.IMAGE,
-          title: null,
-          description: null,
-          imageType: PROJECT.IMAGE.BANNER_LOGO,
-          images: [
-            {
-              url: 'https://media.graphassets.com/2zPTyEPgTtKKqVCOp6I3',
-              width: 1390,
-              height: 564,
-            },
-          ],
-          fillColor: null,
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.CONTENT,
-          number: '02',
-          title: 'About',
-          content: {
-            html: '<h3>A Vast Repository of Filmmaking Tools</h3><p>Our app boasts an extensive collection of over 2,000 products across more than 10 categories, ensuring that users can find exactly what they need for their projects. From cameras to studio setups, we offer a comprehensive rental service that includes a diverse range of brands and models. Our advanced search algorithms are designed to connect users with the perfect equipment, catering to both seasoned professionals and budding artists.</p>',
-          },
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.IMAGE,
-          title: null,
-          description: null,
-          imageType: PROJECT.IMAGE.MOBILE_MOCKUP,
-          images: [
-            {
-              url: 'https://media.graphassets.com/4lkVyQSCS96B7MnlrQlL',
-              width: 681,
-              height: 1376,
-            },
-            {
-              url: 'https://media.graphassets.com/lrXLHFvMQZGkMYypzkBP',
-              width: 681,
-              height: 1376,
-            },
-            {
-              url: 'https://media.graphassets.com/j0xFQmajQRSW7XZd44yt',
-              width: 681,
-              height: 1376,
-            },
-            {
-              url: 'https://media.graphassets.com/1XsD2lsRQYCcLkR9wlph',
-              width: 681,
-              height: 1376,
-            },
-            {
-              url: 'https://media.graphassets.com/sjj59jpkSq2Ro5vQO8Rr',
-              width: 681,
-              height: 1376,
-            },
-            {
-              url: 'https://media.graphassets.com/lqKYyVkUSpCjrNixumoZ',
-              width: 681,
-              height: 1376,
-            },
-            {
-              url: 'https://media.graphassets.com/YJzgPy6fQW6GJryJFavq',
-              width: 681,
-              height: 1376,
-            },
-          ],
-          fillColor: null
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.CONTENT,
-          number: '03',
-          title: 'Unique Selling Points',
-          content: {
-            html: '<h3>Why Choose Our App?</h3><ul><li><div><strong>Accessibility: </strong>Rent equipment from a wide array of categories and brands, right at your fingertips.</div></li><li><div><strong>Variety:</strong> With over 1,000 models, find the exact tool you need for your creative endeavors.</div></li><li><div><strong>Community-Driven:</strong> Connect with a network of filmmakers and share resources efficiently.</div></li></ul><p></p>',
-          },
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.COLOR_PALETTE,
-          color: [
-            {
-              hex: '#574eae',
-              name: 'Blue Violet',
-              textColor: '#d9c7cf',
-            },
-            {
-              hex: '#d9c7cf',
-              name: 'Lola',
-              textColor: '#383838',
-            },
-            {
-              hex: '#383838',
-              name: 'Mine Shaft',
-              textColor: '#d9c7cf',
-            },
-          ],
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.CONTENT,
-          number: '04',
-          title: 'Conclusion',
-          content: {
-            html: '<h3>Filling the Gap in the Market</h3><p>While established rental services like BorrowLenses and LensRentals cater to professionals with a clear understanding of their return on investment, our platform is tailored for those who are advancing their craft in filmmaking. We bridge the gap, providing easy access to quality equipment without the need for hefty investments, making the art of filmmaking more accessible to all.</p>',
-          },
-        },
-        {
-          blockType: PROJECT.BLOCK_TYPE.CONTENT,
-          number: '05',
-          title: 'Future Directions',
-          content: {
-            html: '<h3>Expanding Horizons</h3><p>Looking ahead, we aim to enhance our platform with features like real-time availability tracking, user reviews, and a reward system for frequent renters. Our goal is to create a seamless rental experience that empowers every filmmaker&#39;s creative journey.</p>',
-          },
-        },
-      ],
-      relatedProjects: [
-        {
-          title: 'Finance Flow',
-          tagline: 'Personal Finance, Budget & Expense Tracker',
-          tag: [],
-          slug: 'finance-flow',
-          coverImage: {
-            url: 'https://media.graphassets.com/NcoILFZxTjlUfjdyuouQ',
-            width: 3840,
-            height: 2160,
-            mimeType: 'image/jpeg',
-          },
-        },
-        {
-          title: 'KANDA Assistant',
-          tagline: 'AI powered startup solutions',
-          tag: [],
-          slug: 'kanda-assistant',
-          coverImage: {
-            url: 'https://media.graphassets.com/ZAjvFJR2RKWreBZ1xsxQ',
-            width: 2250,
-            height: 1500,
-            mimeType: 'image/jpeg',
-          },
-        },
-      ],
+    },
+  ],
 }

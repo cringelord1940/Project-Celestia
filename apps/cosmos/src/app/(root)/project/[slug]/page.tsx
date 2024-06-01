@@ -49,7 +49,7 @@ export const generateMetadata = async ({
       endpointURL,
       { query: requestQL, variables: { slug } },
       {
-        revalidate: 180,
+        revalidate: preview || process.env.NODE_ENV === 'development' ? 0 : 180,
         headers: HeaderOption,
       },
     )

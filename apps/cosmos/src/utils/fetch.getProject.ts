@@ -5,6 +5,8 @@ import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
 import { FETCH } from '@/enums'
 
+// import { MockProject } from '@/mocks/project.mock'
+
 const getProject: GetProject = async (slug, isPreview) => {
   try {
     const requestQL = gql`
@@ -80,11 +82,13 @@ const getProject: GetProject = async (slug, isPreview) => {
             }
             ... on ColorPalette {
               blockType
+              colorPaletteType
               color
             }
             ... on Grid {
               blockType
               title
+              gridType
               items
             }
             ... on Marquee {
@@ -131,6 +135,8 @@ const getProject: GetProject = async (slug, isPreview) => {
         headers: HeaderOption,
       },
     )
+
+    // const project = MockProject
 
     return { status: FETCH.SUCCESS, project }
   } catch (error) {

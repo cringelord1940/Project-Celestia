@@ -56,38 +56,14 @@ export const CSS = css`
       line-height: 2rem /* 32px */;
       line-height: 2.5rem /* 40px */;
     }
+    @media (min-width: 1200px) {
+      width: 1024px;
+    }
+  }
+  img {
+    padding: 24px 0;
   }
   ${_postTag}
-  // ._post-tag {
-  //   margin-right: 0.5rem /* 8px */;
-  //   margin-top: 0.5rem /* 8px */;
-  //   border-radius: calc(var(--radius) - 2px);
-  //   border-width: 1px;
-  //   border-color: hsl(var(--foreground) / 0.4);
-  //   padding-left: 0.5rem /* 8px */;
-  //   padding-right: 0.5rem /* 8px */;
-  //   padding-top: 0.25rem /* 4px */;
-  //   padding-bottom: 0.25rem /* 4px */;
-  //   text-transform: uppercase;
-  //   transition-property: color, background-color, border-color,
-  //     text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-  //     filter, backdrop-filter;
-  //   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  //   transition-duration: 300ms;
-  //   @media (min-width: 1200px) {
-  //     &:hover {
-  //       background-color: hsl(var(--primary));
-  //       color: rgb(255 255 255 / 1);
-  //       transition-duration: 200ms;
-  //       --tw-translate-y: -0.25rem /* -4px */;
-  //       --tw-translate-x: -0.25rem /* -4px */;
-  //       transform: translate(var(--tw-translate-x), var(--tw-translate-y));
-  //       .dark {
-  //         color: rgb(0 0 0 / 1);
-  //       }
-  //     }
-  //   }
-  // }
   ._post-content {
     h2,
     h3,
@@ -154,6 +130,7 @@ export const CSS = css`
     }
   }
   ._post-content-text {
+    text-indent: 50px;
     & strong {
       padding: 0 0.125rem;
       color: hsl(var(--primary));
@@ -161,16 +138,21 @@ export const CSS = css`
     }
   }
   ._post-quote-rich {
-    padding: 2rem 0 2rem 1.5rem;
+    padding: 2rem 0 1rem 1.5rem;
     font-size: 1.25rem /* 20px */;
     line-height: 1.75rem /* 28px */;
     font-weight: 300;
     font-style: italic;
     @media (min-width: 992px) {
-      padding: 4rem 0 4rem 3rem;
+      padding: 3rem 0 1.5rem 3rem;
       font-size: 1.875rem /* 30px */;
       line-height: 2.25rem /* 36px */;
       line-height: 2.5rem; /* 40px */
+    }
+    @media (min-width: 1200px) {
+      & > div {
+        width: 1024px;
+      }
     }
   }
   ._post-separator-dot {
@@ -180,16 +162,20 @@ export const CSS = css`
     }
   }
   ._post-separator-lineSm {
-    height: 2px;
-    width: 16px;
+    height: 0.25rem;
+    width: 6rem;
+    margin: 3rem 0;
     border-radius: 99px;
     background-color: hsl(var(--primary));
   }
   ._post-separator-lineXl {
     height: 1px;
     width: 70%;
-    padding-left: 15%;
+    margin: 3rem 0;
     border-radius: 99px;
     background-color: hsl(var(--foreground) / 0.4);
+    @media (min-width: 1200px) {
+      width: 800px;
+    }
   }
 `

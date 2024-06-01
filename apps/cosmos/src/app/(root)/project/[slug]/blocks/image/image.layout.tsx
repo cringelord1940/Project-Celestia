@@ -10,10 +10,10 @@ export const ImageBlockLayout: React.FC<ImageBlockLayoutProps> = ({
   children,
 }) => {
   return (
-    <div>
+    <>
       {title && <h2>{title}</h2>}
       {children}
       {description && <p>{description}</p>}
-    </div>
+    </>
   )
 }

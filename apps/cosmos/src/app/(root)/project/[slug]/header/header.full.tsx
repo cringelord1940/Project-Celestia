@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import clsx from 'clsx'
+import { _projectTag } from '../style.css'
 
 interface HeaderProps {
   title: string
@@ -44,7 +46,12 @@ export const FullHeader: React.FC<HeaderProps> = ({
 
   return (
     <div className='relative flex h-dvh items-end justify-center overflow-hidden bg-background'>
-      <div className='2xl:w-[1440px] container z-10 w-screen px-4'>
+      <div
+        className={clsx(
+          'container z-10 w-screen px-4 2xl:w-[1440px]',
+          _projectTag,
+        )}
+      >
         {tag && (
           <motion.div
             variants={animList}
@@ -54,7 +61,7 @@ export const FullHeader: React.FC<HeaderProps> = ({
           >
             {tag.map((v: string, i: number) => (
               <motion.button
-                className='Anim AnimTranslate-4 mr-2 mt-2 rounded-md border border-foreground/40 px-2 py-1 uppercase hover:bg-primary hover:text-white dark:hover:text-black'
+                className='_project-tag'
                 key={i}
                 variants={animItem}
               >
@@ -66,7 +73,7 @@ export const FullHeader: React.FC<HeaderProps> = ({
         <motion.h1
           initial={{ y: 300, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className='2xl:text-8xl mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl'
+          className='mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl 2xl:text-8xl'
         >
           {title}
         </motion.h1>

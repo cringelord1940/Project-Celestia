@@ -16,9 +16,9 @@ export const SeparatorBlock: React.FC<SeparatorBlockProps> = ({
         </div>
       )
     case POST.SEPARATOR.LINE_SM:
-      return <div className='._post-separator-lineSm' />
+      return <div className='_post-separator-lineSm' />
     case POST.SEPARATOR.LINE_XL:
-      return <div className='._post-separator-lineXl' />
+      return <div className='_post-separator-lineXl' />
     case POST.SEPARATOR.JUST_PADDING:
       return <div className='h-24 w-full' />
     default:

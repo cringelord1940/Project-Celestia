@@ -5,7 +5,7 @@ import Link from 'next/link'
 const RelatedProjects = ({ projects }: { projects: RelatedProject[] }) => {
   return (
     <>
-      <div className='pb-48 pt-16'>
+      <div className='container pb-48 pt-16'>
         <h6 className='mb-14 font-semibold'>Related Projects</h6>
         {projects &&
           projects.map((project, i: number) => (
