@@ -146,7 +146,7 @@ const nextConfig = {
 const sentryWebpackPluginOptions = {
   silent: true,
   org: 'theiceji',
-  project: 'cosmos',
+  project: 'celestia-cosmos',
 }
 
 const millionConfig = {

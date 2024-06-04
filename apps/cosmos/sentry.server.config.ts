@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
-import config from '@global/config'
+import config from '@config'
 
 Sentry.init({
   dsn: config.app.SENTRY.dsn,

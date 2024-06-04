@@ -1,11 +1,41 @@
 export default function Offline() {
+  const ContainerCSS = {
+    display: 'flex',
+    height: '100vh',
+    width: '100vw',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#1e40af',
+    color: '#fff',
+    textAlign: 'center',
+  }
+
+  const MainTextCSS = {
+    fontSize: 24,
+    fontWeight: 600,
+  }
+
+  const SubTextCSS = {
+    fontSize: 16,
+    opacity: 0.6,
+  }
+
+  const buttonCSS = {
+    border: '1px solid #ffffff22',
+    padding: '2px 4px',
+    marginTop: 12,
+  }
+
   return (
-    <div className='flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-r from-blue-800 to-blue-900'>
-      <h2 className='text-2xl font-semibold sm:text-5xl'>You're offline now</h2>
-      <h6 className='text-base opacity-60 sm:text-xl'>
-        and we can't connect to your cache
-      </h6>
-      <button className='Btn-white-40 mt-6'>Refresh</button>
+    <div style={ContainerCSS}>
+      <div>
+        <h2 style={MainTextCSS}>You're offline now</h2>
+        <h6 style={SubTextCSS}>and we can't connect to your cache</h6>
+        <button role='button' style={buttonCSS}>
+          Refresh
+        </button>
+      </div>
     </div>
   )
 }
