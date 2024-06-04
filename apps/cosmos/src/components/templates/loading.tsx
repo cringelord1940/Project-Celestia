@@ -58,7 +58,7 @@ const LogoBlock = ({ isLoaded }: { isLoaded: boolean }) => (
           delay: 2.5,
         }}
       >
-        <IceJiLogo dark={true} />
+        <IceJiLogo className='fill-foreground' />
       </motion.div>
       <AnimatePresence>
         {!isLoaded && (
@@ -121,7 +121,7 @@ const ProgressBlock = ({ progress }: { progress: string }) => (
         </h6>
         <div className='mb-3 mt-5 h-[10px] w-full rounded-md'>
           <motion.div
-            className='bg-primary m-0.5 h-[4px] rounded-md'
+            className='m-0.5 h-[4px] rounded-md bg-primary'
             animate={{ width: '100%' }}
             initial={{ width: 0 }}
             transition={{

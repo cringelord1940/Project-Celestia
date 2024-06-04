@@ -8,26 +8,45 @@ import {
   Effect,
 } from 'postprocessing'
 
-const FxComposer = (
-  Pass: ShaderPass[] | undefined,
-  Effect: Effect[] | undefined,
-) => {
+export interface FxComposerInput {
+  Pass?: ShaderPass[] | ShaderPass
+  Effect?: Effect[] | Effect
+  onBeforeSetPass?: (input: {
+    Composer: EffectComposer
+    renderScene: RenderPass
+  }) => void
+  onAfterSetPass?: (input: {
+    Composer: EffectComposer
+    renderScene: RenderPass
+  }) => void
+}
+
+const FxComposer = (FX: FxComposerInput) => {
   const { gl, scene, camera, size } = useThree()
   const Composer = useMemo(() => {
     const Composer = new EffectComposer(gl)
     const renderScene = new RenderPass(scene, camera)
     Composer.addPass(renderScene)
+    FX.onBeforeSetPass && FX.onBeforeSetPass({ Composer, renderScene })
+    if (FX.Effect) {
+      Array.isArray(FX.Effect)
+        ? FX.Effect.map((E: Effect) =>
+            Composer.addPass(new EffectPass(camera, E)),
+          )
+        : Composer.addPass(new EffectPass(camera, FX.Effect))
+    }
 
-    Effect &&
-      Effect.map((E: Effect) => Composer.addPass(new EffectPass(camera, E)))
-
-    Pass &&
-      Pass.map((P: ShaderPass) => {
-        Composer.addPass(P)
-      })
+    if (FX.Pass) {
+      Array.isArray(FX.Pass)
+        ? FX.Pass.map((P: ShaderPass) => {
+            Composer.addPass(P)
+          })
+        : Composer.addPass(FX.Pass)
+    }
+    FX.onAfterSetPass && FX.onAfterSetPass({ Composer, renderScene })
 
     return Composer
-  }, [camera, gl, scene, Pass, Effect])
+  }, [camera, gl, scene, FX.Pass, FX.Effect])
 
   function EffectComponent() {
     useEffect(() => {

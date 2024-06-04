@@ -16,50 +16,42 @@ export const getContactObject = (Link: {
   discord: string
 }) => ({
   facebook: {
-    name: 'Facebook',
-    icon: 'fab fa-facebook-f',
+    name: 'facebook',
     link: 'https://www.facebook.com/' + Link.facebook,
     href: 'https://www.facebook.com/' + Link.facebook,
   },
   messenger: {
-    name: 'Messenger',
-    icon: 'fa fa-comment',
+    name: 'messenger',
     link: 'https://m.me/' + Link.messenger,
     href: 'https://m.me/' + Link.messenger,
   },
   instagram: {
-    name: 'Instagram',
-    icon: 'fab fa-instagram',
+    name: 'instagram',
     link: 'https://www.instagram.com/' + Link.instagram,
     href: 'https://www.instagram.com/' + Link.instagram,
   },
   youtube: {
-    name: 'Youtube',
-    icon: 'fab fa-youtube',
+    name: 'youtube',
     link: 'https://www.youtube.com/' + Link.youtube,
     href: 'https://www.youtube.com/' + Link.youtube,
   },
   mail: {
-    name: 'Mail',
-    icon: 'fa fa-envelope',
+    name: 'mail',
     link: 'mailto:' + Link.mail,
     href: 'mailto:' + Link.mail,
   },
   github: {
-    name: 'Github',
-    icon: 'fab fa-github',
+    name: 'github',
     link: 'https://github.com/' + Link.github,
     href: 'https://github.com/' + Link.github,
   },
   twitter: {
-    name: 'Twitter',
-    icon: 'fab fa-twitter',
+    name: 'twitter',
     link: 'https://twitter.com/' + Link.twitter,
     href: 'https://twitter.com/' + Link.twitter,
   },
   discord: {
-    name: 'Discord',
-    icon: 'fab fa-discord',
+    name: 'discord',
     link: 'https://discord.gg/' + Link.discord,
     href: 'https://discord.gg/' + Link.discord,
   },

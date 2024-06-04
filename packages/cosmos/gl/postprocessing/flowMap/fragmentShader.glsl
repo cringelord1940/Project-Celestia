@@ -1,10 +1,12 @@
 uniform sampler2D tDiffuse;
 uniform sampler2D u_motionTexture;
-uniform float u_powar;
+uniform float u_power;
 uniform float u_aspect;
 uniform bool u_pixelMode;
 uniform float u_pixel;
 varying vec2 v_uv;
+
+uniform vec2 u_mouse;
 
 void main() {
     vec2 st = v_uv;
@@ -14,7 +16,7 @@ void main() {
     }
     vec4 motionTexture = texture2D(u_motionTexture, st);
 
-    vec2 distortion = -motionTexture.xy * u_powar;
+    vec2 distortion = -motionTexture.xy * u_power;
     vec2 uv = v_uv + distortion;
     vec4 tex = texture2D(tDiffuse, uv);
 
@@ -22,4 +24,5 @@ void main() {
     a *= tex.a;
     // gl_FragColor = vec4(tex.rgb * a, a);
     gl_FragColor = vec4(tex.rgb, a);
+
 }

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import clsx from 'clsx'
-import { _projectTag } from '../style.css'
+import { _projectTag } from '../styles/tag.css'
 
 interface HeaderProps {
   title: string

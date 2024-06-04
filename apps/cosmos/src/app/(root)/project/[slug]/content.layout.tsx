@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
-import { CSS } from './style.css'
+import { CSS } from './styles'
 
 export const ContentLayout = ({ children }: { children: React.ReactNode }) => {
   return (

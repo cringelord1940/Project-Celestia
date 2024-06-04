@@ -7,14 +7,14 @@ const InlineGridInfo = ({ projectInfo }: { projectInfo: ProjectInfo }) => {
     { title: 'Date', description: projectInfo.date },
     { title: 'Services', description: projectInfo.services },
   ]
+
+  console.log(infoData[2])
   return (
     <div className='_project-info-inlineGrid container'>
       {infoData.map((v: any, i: number) => (
         <div key={i} className='Anim-1 AnimTranslate-4 backdrop-blur-md'>
-          <h4 className='text-center text-xs font-bold sm:text-base'>
-            {v.title} :
-          </h4>
-          <p className='text-center text-xs sm:text-base'>{v.description}</p>
+          <h4>{v.title} :</h4>
+          <p>{v.description}</p>
         </div>
       ))}
     </div>

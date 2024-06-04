@@ -22,14 +22,11 @@ export const _postTag = css`
     @media (min-width: 1200px) {
       &:hover {
         background-color: hsl(var(--primary));
-        color: rgb(255 255 255 / 1);
+        color: hsl(var(--background));
         transition-duration: 200ms;
         --tw-translate-y: -0.25rem /* -4px */;
         --tw-translate-x: -0.25rem /* -4px */;
         transform: translate(var(--tw-translate-x), var(--tw-translate-y));
-        .dark {
-          color: rgb(0 0 0 / 1);
-        }
       }
     }
   }

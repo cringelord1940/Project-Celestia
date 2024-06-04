@@ -1,5 +1,13 @@
 export const Projects = [
   {
+    name: 'NEXEL',
+    type: 'Tech Startup',
+    description: 'Creators of cutting-edge technology for Modern applications',
+    icon: 'website',
+    link: 'https://nexellab.com/',
+    star: '99',
+  },
+  {
     name: 'ARTSCAPE',
     type: 'Web-App',
     description: 'Discover, Showcase, and Connect with Artists Worldwide,',
@@ -8,11 +16,12 @@ export const Projects = [
     star: '99',
   },
   {
-    name: 'NEXEL',
-    type: 'Tech Startup',
-    description: 'Creators of cutting-edge technology for Modern applications',
+    name: 'TourTune',
+    type: 'Web-App',
+    description:
+      'Where Every Note Hits the Road? Your Concert Journey, Our Expertise',
     icon: 'website',
-    link: 'https://nexellab.com/',
+    link: 'https://thetourtune.com/',
     star: '99',
   },
   {
@@ -135,19 +144,19 @@ export const Expertises = [
     level: SkillLevel.LEVEL_5,
   },
   {
-    name: ['S. Editing', 'Mixing', 'Mastering'],
-    category: ['Sound & Music'],
-    level: SkillLevel.LEVEL_4,
-  },
-  {
     name: ['Adobe XD', 'Illustrator', 'Photoshop'],
     category: ['Graphics Design'],
     level: SkillLevel.LEVEL_3,
   },
   {
+    name: ['S. Editing', 'Mixing', 'Mastering'],
+    category: ['Sound & Music'],
+    level: SkillLevel.LEVEL_2,
+  },
+  {
     name: ['MAYA', 'vRay, Arnold', 'Sub. Painter'],
     category: ['3D & LookDev'],
-    level: SkillLevel.LEVEL_2,
+    level: SkillLevel.LEVEL_1,
   },
 ]
 
@@ -221,20 +230,26 @@ export const Teams = [
 
 export const Works = [
   {
-    company: '27 JUNE STUDIO',
+    company: '27JUNE STUDIO',
     position: 'Full-Stack Developer',
     description: 'Building an Interactive application for events',
+    date: '2023 / Currently working',
+  },
+  {
+    company: 'Ideal 8 STUDIO',
+    position: 'Full-Stack Developer',
+    description: 'Help on application of Ideal8 startup project',
     date: '2023 / Currently working',
   },
   {
     company: 'ArtScape, team project',
     position: 'Full-Stack Developer',
     description:
-      'Building an Artist Community with T3-Stack and integrating Web3',
+      'Building an Creative Social Network with T3-Stack and integrating Web3',
     date: '2023 / Dec-2023',
   },
   {
-    company: 'Insight Technology Co., Ltd.',
+    company: 'Insight Entertainment Co., Ltd.',
     position: 'Post-Production Artist',
     description:
       'Control the post-production workflow, produce VFX, CGI, and film sound',
@@ -243,7 +258,7 @@ export const Works = [
   {
     company: 'Infinity One Co., Ltd.',
     position: 'React Developer',
-    description: 'I create interactive and front-end NextJS websites.',
+    description: 'Serve an interactive front-end with NextJS + MongoDB.',
     date: '2021 / Jul-2022',
   },
   {
@@ -254,13 +269,13 @@ export const Works = [
   },
   {
     company: 'Freelancer',
-    position: 'WordPress DeveLoper',
+    position: 'WordPress Developer',
     description: 'Building an online store and a landing page',
     date: '2018 / Sept-2019',
   },
   {
     company: 'Agital Advertise Co., Ltd.',
-    position: 'WordPress DeveLoper',
+    position: 'WordPress Developer',
     description: 'Making a WordPress sales page for a client of the business',
     date: '2017 / Jun-2018',
   },

@@ -12,6 +12,8 @@ import {
   FaXmark,
   FaDollarSign,
   FaChartGantt,
+  FaQuoteLeft,
+  FaQuoteRight,
 } from 'react-icons/fa6'
 import { BiGitCompare } from 'react-icons/bi'
 import { GoGitMergeQueue } from 'react-icons/go'
@@ -180,3 +182,5 @@ export const Up = FaAngleUp
 export const Down = FaAngleDown
 export const Left = FaAngleLeft
 export const Right = FaAngleRight
+export const QuoteLeft = FaQuoteLeft
+export const QuoteRight = FaQuoteRight

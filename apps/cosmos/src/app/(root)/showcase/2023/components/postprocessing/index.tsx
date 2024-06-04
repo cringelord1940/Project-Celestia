@@ -24,10 +24,10 @@ const PostProcessing = () => {
     blendFunction: BlendFunction.NORMAL,
     hue: 0.07,
   })
-  const { EffectComponent } = Effect.FxComposer(
-    [flowMapPass, constantNoisePass],
-    [Bloom_1, Bloom_2, HueSaturation],
-  )
+  const { EffectComponent } = Effect.FxComposer({
+    Pass: [flowMapPass, constantNoisePass],
+    Effect: [Bloom_1, Bloom_2, HueSaturation],
+  })
 
   return (
     <>

@@ -36,7 +36,7 @@ export const FlowMapPass = (fxConfig = initialFxConfig) => {
       uniforms: {
         tDiffuse: { value: null },
         u_motionTexture: { value: null },
-        u_powar: { value: fxConfig.power },
+        u_power: { value: fxConfig.power },
         u_aspect: { value: width / height },
         u_pixelMode: { value: fxConfig.isPixel },
         u_pixel: { value: fxConfig.pixel },

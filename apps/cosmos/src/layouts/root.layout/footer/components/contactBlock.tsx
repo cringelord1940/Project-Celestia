@@ -1,18 +1,20 @@
 import { useShallow } from 'zustand/react/shallow'
 import { useUiState, CURSOR } from '@/store'
-import { contacts as contactsRaw } from '@config'
+import { contacts } from '@config'
+import { getContactObject } from '@/utils/contacts'
 import SocialLinkIcon from './socialLinkIcon'
 
 const CreditBlock = () => {
   const [_setCursor] = useUiState(useShallow((st) => [st.setCursor]))
 
-  const contacts = {
-    facebook: contactsRaw.facebook,
-    instagram: contactsRaw.instagram,
-    youtube: contactsRaw.youtube,
-    mail: contactsRaw.mail,
-    discord: contactsRaw.discord,
-  }
+  const Contact = getContactObject(contacts)
+  const contactList = [
+    Contact.facebook,
+    Contact.instagram,
+    Contact.youtube,
+    Contact.mail,
+    Contact.discord,
+  ]
 
   return (
     <div
@@ -27,8 +29,8 @@ const CreditBlock = () => {
         _setCursor(undefined)
       }}
     >
-      {Object.entries(contacts).map(([key, href], i) => (
-        <SocialLinkIcon name={key} href={href} index={i} key={key} />
+      {contactList.map((v, i) => (
+        <SocialLinkIcon name={v.name} href={v.href} index={i} key={v.name} />
       ))}
     </div>
   )

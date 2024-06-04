@@ -3,5 +3,9 @@ export const metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <div className='bg-gradient-to-tr from-background-deep to-foreground/10'>
+      {children}
+    </div>
+  )
 }
