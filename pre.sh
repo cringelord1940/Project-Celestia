@@ -2,6 +2,9 @@
 
 cd /home/theiceji
 
+sudo rm -f package.json
+sudo mv package.bun.json package.json
+
 ~/.bun/bin/bun install
 ~/.bun/bin/bun pre:db
 ~/.bun/bin/bun pre:gql
