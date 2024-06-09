@@ -1,5 +1,8 @@
 # IceJi -- Universal Git Ignore
 
+# build
+*.7z
+
 # dependencies
 /node_modules
 /*/node_modules
