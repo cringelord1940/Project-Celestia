@@ -7,8 +7,6 @@ const InlineGridInfo = ({ projectInfo }: { projectInfo: ProjectInfo }) => {
     { title: 'Date', description: projectInfo.date },
     { title: 'Services', description: projectInfo.services },
   ]
-
-  console.log(infoData[2])
   return (
     <div className='_project-info-inlineGrid container'>
       {infoData.map((v: any, i: number) => (

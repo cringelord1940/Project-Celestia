@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/',
       },
     ],
-    sitemap: 'https://cosmos.theiceji.com/sitemap.xml',
+    sitemap: 'https://theiceji.com/sitemap.xml',
   }
 }

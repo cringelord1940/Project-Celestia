@@ -28,7 +28,7 @@ export const generateMetadata = async ({
   try {
     const requestQL = gql`
       query Project($slug: String!) {
-        project_old(where: { slug: $slug }) {
+        project(where: { slug: $slug }) {
           title
           excerpt
           coverImage {
@@ -45,7 +45,7 @@ export const generateMetadata = async ({
             'gcms-stage': 'DRAFT',
           }
         : {}
-    const { project_old: project } = await useFetchQL(
+    const { project } = await useFetchQL(
       endpointURL,
       { query: requestQL, variables: { slug } },
       {
@@ -75,8 +75,11 @@ export const generateMetadata = async ({
   }
 }
 
-async function Page({ params: { slug } }: PageProps) {
-  const data: GetProjectResult = await getProject(slug)
+async function Page({
+  params: { slug },
+  searchParams: { preview },
+}: PageProps) {
+  const data: GetProjectResult = await getProject(slug, preview === 'true')
 
   if (data.status === FETCH.ERROR) {
     return (
@@ -108,8 +111,11 @@ async function Page({ params: { slug } }: PageProps) {
         />
         <ContentLayout>
           <ProjectInfo projectInfo={project.projectInfo} />
-          <Blocks blocks={project.blocks} />
-          <RelatedProjects projects={project.relatedProjects} />
+          <Blocks blocks={project.blocks} isPreview={preview === 'true'} />
+          <RelatedProjects
+            projects={project.relatedProjects}
+            isPreview={preview === 'true'}
+          />
         </ContentLayout>
       </Layout>
     </>

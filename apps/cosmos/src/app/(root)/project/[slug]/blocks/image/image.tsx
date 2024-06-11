@@ -5,18 +5,18 @@ import { MobileMockupImages } from './mobileMockup'
 import { Gallery4Images } from './gallery4'
 import { OneImage } from './oneImage'
 
-export const ImageBlockSwitcher: React.FC<ImageBlockProps> = ({ image }) => {
-  switch (image.imageType) {
+export const ImageBlockSwitcher: React.FC<ImageBlockProps> = (props) => {
+  switch (props.image.imageType) {
     case PROJECT.IMAGE.BANNER_LOGO:
-      return <BannerImage image={image} isLogo />
+      return <BannerImage {...props} isLogo />
     case PROJECT.IMAGE.BANNER:
-      return <BannerImage image={image} />
+      return <BannerImage {...props} />
     case PROJECT.IMAGE.MOBILE_MOCKUP:
-      return <MobileMockupImages image={image} />
+      return <MobileMockupImages {...props} />
     case PROJECT.IMAGE.GALLERY_4:
-      return <Gallery4Images image={image} />
+      return <Gallery4Images {...props} />
     case PROJECT.IMAGE.ONE_IMAGE:
-      return <OneImage image={image} />
+      return <OneImage {...props} />
     default:
       return null
   }

@@ -75,8 +75,11 @@ export const generateMetadata = async ({
   }
 }
 
-async function Page({ params: { slug } }: PageProps) {
-  const data: GetPostResult = await getPost(slug)
+async function Page({
+  params: { slug },
+  searchParams: { preview },
+}: PageProps) {
+  const data: GetPostResult = await getPost(slug, preview === 'true')
 
   if (data.status === FETCH.ERROR) {
     return (
@@ -104,7 +107,7 @@ async function Page({ params: { slug } }: PageProps) {
         />
         <ContentLayout>
           <Blocks blocks={post.blocks} />
-          <div className='container z-10 w-screen px-4 xl:w-[1024px] mt-48'>
+          <div className='container z-10 mt-48 w-screen px-4 xl:w-[1024px]'>
             <RelatedPosts posts={post.relatedPosts} tag={post.tag} />
           </div>
         </ContentLayout>

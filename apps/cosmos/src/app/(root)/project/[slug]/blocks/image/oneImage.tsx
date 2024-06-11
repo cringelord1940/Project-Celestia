@@ -1,11 +1,12 @@
 'use client'
 
 import { ImageBlockProps } from './image.common'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
+// import Image from 'next/image'
+import { Image } from '@components'
 import { useAnimateObjectWhenScroll } from '@nexel/cosmos/animations/hooks'
 
-export const OneImage: React.FC<ImageBlockProps> = ({ image }) => {
+export const OneImage: React.FC<ImageBlockProps> = ({ image, isPreview }) => {
   const img = image.images[0]
   const aspectRatio = `${img.width} / ${img.height}`
   const { ref, motionValue } = useAnimateObjectWhenScroll({
@@ -30,13 +31,15 @@ export const OneImage: React.FC<ImageBlockProps> = ({ image }) => {
         <Image
           src={img.url}
           alt={image.title || 'project banner image'}
-          layout='fill'
+          // layout='fill'
+          // quality={100}
+          fill
           objectFit='cover'
-          quality={100}
-          placeholder='blur'
-          blurDataURL={
-            'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-          }
+          // placeholder='blur'
+          // blurDataURL={
+          //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+          // }
+          unoptimized={isPreview}
         />
       </motion.div>
     </div>

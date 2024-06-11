@@ -125,12 +125,10 @@
   @apply rounded-[0.75rem] bg-primary;
 }
 ::selection {
-  color: #fff;
-  @apply bg-primary;
+  @apply bg-primary text-background;
 }
 ::-moz-selection {
-  color: #fff;
-  @apply bg-primary;
+  @apply bg-primary text-background;
 }
 ::-moz-focus-inner {
   padding: 0;

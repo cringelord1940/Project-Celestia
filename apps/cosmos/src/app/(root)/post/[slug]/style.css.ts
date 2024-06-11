@@ -57,10 +57,10 @@ export const CSS = css`
       width: 1024px;
     }
   }
-  img {
-    padding: 24px 0;
-  }
   ${_postTag}
+  ._post-utils-no_indent {
+    text-indent: 0px !important;
+  }
   ._post-content {
     h2,
     h3,
@@ -123,6 +123,50 @@ export const CSS = css`
       @media (min-width: 992px) {
         font-size: 1.125rem /* 18px */;
         line-height: 1.75rem /* 28px */;
+      }
+    }
+    a {
+      opacity: 0.6;
+      text-decoration: underline;
+      transition-duration: 450ms;
+      &:hover {
+        opacity: 1;
+        color: hsl(var(--primary));
+        transition-duration: 200ms;
+      }
+    }
+    img {
+      margin: 24px auto;
+      border-radius: 1rem;
+    }
+    ul {
+      padding: 12px 0;
+      & + p {
+        /* First text after ul */
+        text-indent: 0px;
+      }
+      & > li {
+        font-weight: 300;
+        color: hsl(var(--foreground) / 0.8);
+        position: relative;
+        strong {
+          font-weight: 500;
+          color: hsl(var(--foreground));
+        }
+        & > div {
+          text-indent: 0px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          left: -14px;
+          top: 50%;
+          transform: translate(0, -50%);
+          border-radius: 1.5px;
+          background-color: hsl(var(--primary));
+        }
       }
     }
   }

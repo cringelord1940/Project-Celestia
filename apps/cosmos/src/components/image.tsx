@@ -1,59 +1,69 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import NextImage from 'next/image'
 import clsx from 'clsx'
 
-type tImgProps = {
+type ImgProps = {
   src: string
-  className: string
-  absolute?: boolean
+  unoptimized?: boolean
   alt?: string
-  objectFit: 'contain' | 'cover'
+  className?: string
+  fill?: boolean
+  width?: number
+  height?: number
+  objectFit?: 'contain' | 'cover'
   objectPosition?: string
-  events?: any
-  motion?: boolean
-  delay?: number
+  events?: Record<string, () => void>
+  blurDataURL?: string
 }
 
-const Image = (p: tImgProps) => {
-  if (p.motion) {
+export const Image = (p: ImgProps) => {
+  if (p.unoptimized) {
+    const initialStyle = {
+      objectFit: p.objectFit ?? 'cover',
+      objectPosition: p.objectPosition ?? '50% 50%',
+    }
+    const imgProps =
+      p.width && p.height
+        ? {
+            width: p.width,
+            height: p.height,
+            style: initialStyle,
+          }
+        : {
+            style: {
+              ...initialStyle,
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+            },
+          }
     return (
-      <motion.div
-        className={clsx(p.className, p.absolute ? 'absolute' : 'relative')}
+      <img
         {...p.events}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, ease: 'easeIn', delay: p.delay ?? 0 }}
-      >
-        <NextImage
-          src={p.src}
-          alt={p.alt ?? 'Collective Blooms'}
-          fill
-          style={{
-            objectFit: p.objectFit ?? 'cover',
-            objectPosition: p.objectPosition ?? '50% 50%',
-          }}
-        />
-      </motion.div>
+        className={clsx(p.className)}
+        src={p.src}
+        alt={p.alt ?? 'TheIceJi'}
+        {...imgProps}
+      />
     )
   }
   return (
-    <div
-      className={clsx(p.className, p.absolute ? 'absolute' : 'relative')}
+    <NextImage
       {...p.events}
-    >
-      <NextImage
-        src={p.src}
-        alt={p.alt ?? 'Collective Blooms'}
-        fill
-        style={{
-          objectFit: p.objectFit ?? 'cover',
-          objectPosition: p.objectPosition ?? '50% 50%',
-        }}
-      />
-    </div>
+      className={clsx(p.className)}
+      src={p.src}
+      alt={p.alt ?? 'TheIceJi'}
+      fill={p.fill}
+      width={p.width}
+      height={p.height}
+      style={{
+        objectFit: p.objectFit ?? 'cover',
+        objectPosition: p.objectPosition ?? '50% 50%',
+      }}
+      placeholder='blur'
+      blurDataURL={
+        p.blurDataURL ??
+        'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+      }
+    />
   )
 }
-
-export { Image }

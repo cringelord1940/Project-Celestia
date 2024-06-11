@@ -1,7 +1,11 @@
 import { ImageBlockProps } from './image.common'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from '@components'
 
-export const Gallery4Images: React.FC<ImageBlockProps> = ({ image }) => {
+export const Gallery4Images: React.FC<ImageBlockProps> = ({
+  image,
+  isPreview,
+}) => {
   return (
     <div className='container my-[4rem] mb-24 grid grid-cols-1 gap-4 md:grid-cols-2'>
       {image.images.map((v: any, i: number) => (
@@ -13,15 +17,15 @@ export const Gallery4Images: React.FC<ImageBlockProps> = ({ image }) => {
             className='Anim AnimScale-sm'
             src={v.url}
             alt={`${image.title || 'project banner image'}_${i}`}
-            // width={v.width}
-            // height={v.height}
-            layout='fill'
+            // layout='fill'
+            // quality={100}
+            // placeholder='blur'
+            fill
             objectFit='cover'
-            quality={100}
-            placeholder='blur'
-            blurDataURL={
-              'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-            }
+            // blurDataURL={
+            //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+            // }
+            unoptimized={isPreview}
           />
         </div>
       ))}

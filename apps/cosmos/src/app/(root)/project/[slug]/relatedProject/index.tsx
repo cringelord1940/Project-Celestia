@@ -1,8 +1,15 @@
 import type { RelatedProject } from '@types'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from '@components'
 import Link from 'next/link'
 
-const RelatedProjects = ({ projects }: { projects: RelatedProject[] }) => {
+const RelatedProjects = ({
+  projects,
+  isPreview,
+}: {
+  projects: RelatedProject[]
+  isPreview: boolean
+}) => {
   return (
     <>
       <div className='_project-relatedProject container'>
@@ -27,12 +34,14 @@ const RelatedProjects = ({ projects }: { projects: RelatedProject[] }) => {
                 <Image
                   alt={project.title}
                   src={project.coverImage.url}
-                  layout='fill'
+                  // layout='fill'
+                  fill
                   objectFit='cover'
-                  placeholder='blur'
-                  blurDataURL={
-                    'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-                  }
+                  unoptimized={isPreview}
+                  // placeholder='blur'
+                  // blurDataURL={
+                  //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+                  // }
                 />
               </div>
             </Link>

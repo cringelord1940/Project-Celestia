@@ -1,11 +1,15 @@
 'use client'
 
 import { ImageBlockProps } from './image.common'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
+// import Image from 'next/image'
+import { Image } from '@components'
 import { useAnimateObjectWhenScroll } from '@nexel/cosmos/animations/hooks'
 
-export const MobileMockupImages: React.FC<ImageBlockProps> = ({ image }) => {
+export const MobileMockupImages: React.FC<ImageBlockProps> = ({
+  image,
+  isPreview,
+}) => {
   const { ref, motionValue } = useAnimateObjectWhenScroll({
     setScrollRange: (rect) => (rect ? [rect.top - 1000, rect.bottom] : [0, 0]),
     setValueRange: (rect) => (rect ? [0, -rect.width] : [0, 0]),
@@ -35,10 +39,11 @@ export const MobileMockupImages: React.FC<ImageBlockProps> = ({ image }) => {
                 alt={`${image.title || 'project banner image'}_${i}`}
                 width={img.width}
                 height={img.height}
-                placeholder='blur'
-                blurDataURL={
-                  'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-                }
+                // placeholder='blur'
+                // blurDataURL={
+                //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+                // }
+                unoptimized={isPreview}
               />
             </div>
           ))}

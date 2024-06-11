@@ -1,9 +1,11 @@
 import { ImageBlockProps } from './image.common'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from '@components'
 
 export const BannerImage: React.FC<ImageBlockProps & { isLogo?: boolean }> = ({
   image,
   isLogo,
+  isPreview,
 }) => {
   if (isLogo) {
     return (
@@ -17,10 +19,12 @@ export const BannerImage: React.FC<ImageBlockProps & { isLogo?: boolean }> = ({
             alt={image.title || 'project banner image'}
             width={image.images[0].width}
             height={image.images[0].height}
-            placeholder='blur'
-            blurDataURL={
-              'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-            }
+            // placeholder='blur'
+            objectFit='contain'
+            // blurDataURL={
+            //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+            // }
+            unoptimized={isPreview}
           />
         </div>
       </div>
@@ -31,12 +35,13 @@ export const BannerImage: React.FC<ImageBlockProps & { isLogo?: boolean }> = ({
         <Image
           src={image.images[0].url}
           alt={image.title || 'project banner image'}
-          layout='fill'
+          fill
           objectFit='cover'
-          placeholder='blur'
-          blurDataURL={
-            'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-          }
+          // placeholder='blur'
+          // blurDataURL={
+          //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+          // }
+          unoptimized={isPreview}
         />
       </div>
     )
