@@ -1,4 +1,4 @@
-import type { MotionValue } from 'framer-motion'
+import { DynamicNavModule } from './UiState.DynNav'
 
 export enum INTERFACE {
   EXPERIENCE = 'experience',
@@ -6,9 +6,11 @@ export enum INTERFACE {
 }
 
 export enum NAV {
-  DEFAULT = 'default',
-  TOP = 'top',
   DRAGGABLE = 'draggable',
+  TOP = 'top',
+  BOTTOM = 'bottom',
+  LEFT = 'left',
+  RIGHT = 'right',
 }
 
 export enum NAV_ACTION {
@@ -40,20 +42,6 @@ export enum CURSOR {
   LENS = 'lens',
 }
 
-export type ScrollState = {
-  scrollable: boolean
-  pageHeight: number | undefined
-  scrollProgress: number | undefined
-  motionValue: MotionValue<string> | string | undefined
-  scrollY: MotionValue<number> | undefined
-}
-
-type OnScrollFunctionProps = {
-  pageHeight: number
-  motionValue: MotionValue<string>
-  scrollY: MotionValue<number>
-}
-
 export interface UiState {
   dark: boolean
   setDark: (dark: boolean) => void
@@ -75,7 +63,7 @@ export interface UiState {
   audio: boolean
   setAudio: (audio: boolean) => void
   onToggleAudio: () => void
-  scroll: ScrollState | undefined
-  setScroll: (state: ScrollState | undefined) => void
-  onScroll: (value: OnScrollFunctionProps) => void
+  dynamicNav: DynamicNavModule[] | []
+  setDynamicNav: (dynModules: DynamicNavModule[] | []) => void
+  onClearDynamicNav: () => void
 }

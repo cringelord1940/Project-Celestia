@@ -103,6 +103,7 @@ async function Page({
         title={project.title}
         tagline={project.tagline}
         slug={project.slug}
+        coverImage={project.coverImage}
       >
         <Header
           header={project.header}

@@ -1,4 +1,4 @@
-import { UiState, NAV, FOOTER, NAV_ACTION, INTERFACE } from './UiState'
+import { UiState, NAV, FOOTER, INTERFACE } from './UiState'
 import { create } from 'zustand'
 
 export const useUiState = create<UiState>((set, get) => ({
@@ -9,10 +9,9 @@ export const useUiState = create<UiState>((set, get) => ({
   setInterface: (i) => set({ interface: i }),
   cursor: undefined,
   setCursor: (cursor) => set({ cursor: cursor }),
-  nav: NAV.DEFAULT,
+  nav: NAV.BOTTOM,
   setNav: (nav) => set({ nav: nav }),
   navAction: undefined,
-  // navAction: NAV_ACTION.USER,
   onToggleNavAction: (action) =>
     set({
       navAction: get().navAction === action ? undefined : action,
@@ -31,7 +30,7 @@ export const useUiState = create<UiState>((set, get) => ({
   audio: false,
   setAudio: (audio) => set({ audio: audio }),
   onToggleAudio: () => set({ audio: !get().audio }),
-  scroll: undefined,
-  setScroll: (state) => {},
-  onScroll: ({ pageHeight, motionValue, scrollY }) => {},
+  dynamicNav: [],
+  setDynamicNav: (dynModules) => set({ dynamicNav: dynModules }),
+  onClearDynamicNav: () => set({ dynamicNav: [] }),
 }))

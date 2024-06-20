@@ -98,7 +98,7 @@ export const Settings = () => {
           </div>
         </li>
       </ul>
-      <h6 className='my-2 font-bold'>Navbar</h6>
+      {/* <h6 className='my-2 font-bold'>Navbar</h6>
       <ul className={CSS}>
         <li>
           <p>Placement</p>
@@ -108,14 +108,16 @@ export const Settings = () => {
                 <SelectValue placeholder={_nav} />
               </SelectTrigger>
               <SelectContent className='z-90'>
-                <SelectItem value={NAV.DEFAULT}>Bottom</SelectItem>
+                <SelectItem value={NAV.BOTTOM}>Bottom</SelectItem>
                 <SelectItem value={NAV.TOP}>Top</SelectItem>
+                <SelectItem value={NAV.LEFT}>Left</SelectItem>
+                <SelectItem value={NAV.RIGHT}>Right</SelectItem>
                 <SelectItem value={NAV.DRAGGABLE}>Draggable</SelectItem>
               </SelectContent>
             </Select>
           </div>
         </li>
-      </ul>
+      </ul> */}
     </>
   )
 }

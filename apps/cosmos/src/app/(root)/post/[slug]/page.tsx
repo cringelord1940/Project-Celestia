@@ -99,7 +99,12 @@ async function Page({
 
   return (
     <>
-      <Layout title={post.title} excerpt={post.excerpt} slug={post.slug}>
+      <Layout
+        title={post.title}
+        excerpt={post.excerpt}
+        slug={post.slug}
+        coverImage={post.coverImage}
+      >
         <Header
           title={post.title}
           tag={post.tag}

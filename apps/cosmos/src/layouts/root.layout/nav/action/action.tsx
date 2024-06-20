@@ -36,18 +36,42 @@ export const NavAction: React.FC<NavActionProps> = ({
   const Component =
     action !== undefined ? Components[action as NAV_ACTION] : () => null
 
+  const actionAnimation = {
+    initial:
+      _nav === (NAV.TOP || NAV.BOTTOM)
+        ? { y: 20, opacity: 0, x: '-50%' }
+        : _nav === (NAV.LEFT || NAV.RIGHT)
+          ? { x: 20, opacity: 0 }
+          : {},
+    animate:
+      _nav === (NAV.TOP || NAV.BOTTOM)
+        ? { y: 0, opacity: 1, x: '-50%' }
+        : _nav === (NAV.LEFT || NAV.RIGHT)
+          ? { x: 0, opacity: 1 }
+          : {},
+    exit:
+      _nav === (NAV.TOP || NAV.BOTTOM)
+        ? { y: 20, opacity: 0, x: '-50%' }
+        : _nav === (NAV.LEFT || NAV.RIGHT)
+          ? { x: 20, opacity: 0 }
+          : {},
+  }
+
   return (
     <>
       <AnimatePresence>
         {action && action !== NAV_ACTION.MENU_CANVAS && (
           <motion.div
             className={clsx(
-              'absolute left-1/2 z-90 min-w-48 rounded-md border border-foreground/10 bg-background/20 px-4 py-6 backdrop-blur-md',
-              _nav === NAV.TOP ? 'top-20' : 'bottom-20',
+              'absolute z-90 min-w-48 rounded-md border border-foreground/10 bg-background/20 px-4 py-6 backdrop-blur-md',
+              _nav === NAV.BOTTOM && 'bottom-20 left-1/2 -translate-x-1/2',
+              _nav === NAV.TOP && 'left-1/2 top-20 -translate-x-1/2',
+              _nav === NAV.LEFT && 'left-20 top-5',
+              _nav === NAV.RIGHT && 'right-20 top-5',
             )}
-            initial={{ y: 20, opacity: 0, x: '-50%' }}
-            animate={{ y: 0, opacity: 1, x: '-50%' }}
-            exit={{ y: 20, opacity: 0, x: '-50%' }}
+            initial={actionAnimation.initial}
+            animate={actionAnimation.animate}
+            exit={actionAnimation.exit}
           >
             <h6 className='mb-2 font-bold'>{startCase(action)}</h6>
             <Component />

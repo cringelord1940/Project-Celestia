@@ -30,6 +30,11 @@ const Icons = [
     href: 'https://www.prisma.io/',
   },
   {
+    title: 'GraphQL',
+    icon: 'https://skillicons.dev/icons?i=graphql',
+    href: 'https://graphql.org/',
+  },
+  {
     title: 'Auth.js',
     icon: 'https://next-auth.js.org/img/logo/logo-sm.png',
     href: 'https://authjs.dev/',
@@ -39,6 +44,7 @@ const Icons = [
     icon: 'https://skillicons.dev/icons?i=tailwind',
     href: 'https://tailwindcss.com/',
   },
+
   {
     title: 'AWS S3',
     icon: 'https://skillicons.dev/icons?i=aws',

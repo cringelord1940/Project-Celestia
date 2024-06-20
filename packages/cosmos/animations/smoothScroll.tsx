@@ -21,7 +21,7 @@ import { InnerHeight } from '@nexel/nextjs/libs/hooks/layouts'
 
 export type OnScrollFunctionProps = {
   pageHeight: number
-  motionValue: MotionValue<string>
+  motionValue: MotionValue<number>
   scrollY: MotionValue<number>
 }
 
@@ -65,11 +65,13 @@ const SmoothScroll = ({
   const motionValue = useTransform(
     scrollY,
     [0, pageHeight - windowHeight],
-    ['0%', '100%'],
+    [0, 1],
   )
+  const motionValueSpring = useSpring(motionValue, physics)
 
   useEffect(() => {
-    onScroll && onScroll({ pageHeight, motionValue, scrollY })
+    onScroll &&
+      onScroll({ pageHeight, motionValue: motionValueSpring, scrollY })
   }, [onScroll, scrollY, pageHeight, motionValue])
 
   return (

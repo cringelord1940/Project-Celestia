@@ -1,8 +1,8 @@
 'use client'
 
 import { useShallow } from 'zustand/react/shallow'
-import { useUiState } from '@/store'
-import { SmoothScroll } from '@nexel/cosmos/animations'
+import { SmoothScroll, OnScrollFunctionProps } from '@nexel/cosmos/animations'
+import { useUiState, NAV_DYN_TYPE } from '@/store'
 import { TypeA as Card } from '@components/post/card'
 
 type tPost = {
@@ -21,7 +21,10 @@ type tPost = {
 const Client = ({ posts }: { posts: any[] }) => {
   // posts = [...posts, ...posts]
 
-  const [onScroll] = useUiState(useShallow((st) => [st.onScroll]))
+  const [setDynamicNav] = useUiState(useShallow((st) => [st.setDynamicNav]))
+  const onScroll = (state: OnScrollFunctionProps) => {
+    setDynamicNav([{ type: NAV_DYN_TYPE.PROGRESS, ...state }])
+  }
 
   return (
     <>
