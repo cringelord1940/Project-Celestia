@@ -11,6 +11,7 @@ import { useUiState, NAV, NAV_ACTION, MODAL, CURSOR } from '@/store'
 import { IceJiLogo } from '@components/logo/IceJi'
 import { Icon } from '@nexel/cosmos/assets'
 import { navAnimationConfig, iconAnimationConfig } from './animations/config'
+import { UserInfo } from './user'
 import { NavAction } from './action'
 import { DynamicNavModules } from './dynamic'
 
@@ -131,17 +132,26 @@ export const NavBar: React.FC<NavbarProps> = ({ session, providers }) => {
                       'w-full flex-col py-4 [&>div]:my-2 [&>div]:w-full',
                   )}
                 >
-                  <motion.div
-                    className='cursor-pointer'
-                    animate={iconAnimation.animate}
-                    whileHover={iconAnimation.whileHover}
-                    onClick={() => {
-                      _onToggleNavAction(NAV_ACTION.USER)
-                      _setCursor(undefined)
-                    }}
-                  >
-                    <Icon.User />
-                  </motion.div>
+                  {!session ? (
+                    <motion.div
+                      className='cursor-pointer'
+                      animate={iconAnimation.animate}
+                      whileHover={iconAnimation.whileHover}
+                      onClick={() => {
+                        _onToggleNavAction(NAV_ACTION.USER)
+                        _setCursor(undefined)
+                      }}
+                    >
+                      <Icon.User />
+                    </motion.div>
+                  ) : (
+                    <UserInfo
+                      session={session}
+                      _onToggleNavAction={_onToggleNavAction}
+                      _setCursor={_setCursor}
+                    />
+                  )}
+
                   <motion.div
                     className='cursor-pointer'
                     animate={iconAnimation.animate}

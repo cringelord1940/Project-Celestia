@@ -28,23 +28,23 @@ const hostName = new URL(env.NEXTAUTH_URL).hostname
 
 export const authOptions: NextAuthOptions | { adapter: any } = {
   pages: {
-    signIn: '/portal',
-    signOut: '/',
-    error: '/portal',
-    newUser: '/app/profile/edit',
+    signIn: '/app',
+    signOut: '/app',
+    error: '/app',
+    newUser: '/app/profile?step=start',
   },
-  cookies: {
-    sessionToken: {
-      name: `${cookiePrefix}next-auth.session-token`,
-      options: {
-        httpOnly: true,
-        sameSite: 'lax',
-        path: '/',
-        domain: '.' + hostName,
-        secure: useSecureCookies,
-      },
-    },
-  },
+  // cookies: {
+  //   sessionToken: {
+  //     name: `${cookiePrefix}next-auth.session-token`,
+  //     options: {
+  //       httpOnly: true,
+  //       sameSite: 'lax',
+  //       path: '/',
+  //       domain: '.' + hostName,
+  //       secure: useSecureCookies,
+  //     },
+  //   },
+  // },
   callbacks: {
     session: ({ session, user }: any) => {
       return {

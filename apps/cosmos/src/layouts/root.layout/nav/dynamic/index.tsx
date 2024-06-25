@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import clsx from 'clsx'
 import { useShallow } from 'zustand/react/shallow'
-import { Icon } from '@nexel/cosmos/assets'
 import { useUiState, NAV, CURSOR } from '@/store'
 import {
-  dynNavAnimationConfig,
+  // dynNavAnimationConfig,
   iconAnimationConfig,
 } from '../animations/config'
 import { RenderModule } from './renderModule'
