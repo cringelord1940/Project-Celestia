@@ -1,14 +1,18 @@
 import type { relatedPost } from '@types'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from '@components'
 import Link from 'next/link'
-import AvatarImg from 'public/page/about/Profile_Avatar@2x.png'
+import { AuthorData } from '@/contents/pages/post.author'
+// import AvatarImg from 'public/page/about/Profile_Avatar@2x.png'
 
 const RelatedPosts = ({
   posts,
   tag,
+  isPreview,
 }: {
   posts: relatedPost[]
   tag: string[] | [] | null
+  isPreview: boolean
 }) => {
   return (
     <>
@@ -26,20 +30,16 @@ const RelatedPosts = ({
           <div className='flex space-x-4 py-12'>
             <div>
               <Image
-                placeholder='blur'
-                src={AvatarImg}
+                // placeholder='blur'
+                src={AuthorData.image.avatar}
                 alt='IceJI Avatar image'
                 height={128}
                 width={128}
               />
             </div>
             <div>
-              <h2 className='text-3xl font-bold'>Jirayu Ninlapun</h2>
-              <p className='mt-2 opacity-80'>
-                Cinematic Art, Bangkok University. Experience: 7 years in
-                Graphics Design, 5 years in VFX & Editor, and 2 years in Web
-                Developer.
-              </p>
+              <h2 className='text-3xl font-bold'>{AuthorData.name}</h2>
+              <p className='mt-2 opacity-80'>{AuthorData.description}</p>
             </div>
           </div>
         </div>
@@ -50,12 +50,13 @@ const RelatedPosts = ({
                 <Image
                   alt={post.title}
                   src={post.coverImage.url}
-                  layout='fill'
+                  // layout='fill'
                   objectFit='cover'
-                  placeholder='blur'
-                  blurDataURL={
-                    'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-                  }
+                  // placeholder='blur'
+                  // blurDataURL={
+                  //   'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+                  // }
+                  unoptimized={isPreview}
                 />
                 <div>
                   <h3>{post.title}</h3>

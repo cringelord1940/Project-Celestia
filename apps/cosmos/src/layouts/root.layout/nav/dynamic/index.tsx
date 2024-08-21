@@ -8,6 +8,8 @@ import {
 } from '../animations/config'
 import { RenderModule } from './renderModule'
 
+export { UserModules } from './module.user'
+
 interface DynamicNavModulesProps {
   _nav: NAV
   _setCursor: (c: CURSOR | undefined) => void

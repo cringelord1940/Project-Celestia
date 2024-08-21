@@ -77,8 +77,11 @@ export const generateMetadata = async ({
 
 async function Page({
   params: { slug },
-  searchParams: { preview },
+  // searchParams: { preview },
 }: PageProps) {
+  // TODO: Fix image optimization
+  const preview: string = 'true'
+
   const data: GetPostResult = await getPost(slug, preview === 'true')
 
   if (data.status === FETCH.ERROR) {
@@ -109,11 +112,16 @@ async function Page({
           title={post.title}
           tag={post.tag}
           headerImage={post.coverImage}
+          isPreview={preview === 'true'}
         />
         <ContentLayout>
-          <Blocks blocks={post.blocks} />
+          <Blocks blocks={post.blocks} isPreview={preview === 'true'} />
           <div className='container z-10 mt-48 w-screen px-4 xl:w-[1024px]'>
-            <RelatedPosts posts={post.relatedPosts} tag={post.tag} />
+            <RelatedPosts
+              posts={post.relatedPosts}
+              tag={post.tag}
+              isPreview={preview === 'true'}
+            />
           </div>
         </ContentLayout>
       </Layout>

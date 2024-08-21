@@ -1,6 +1,7 @@
 'use client'
 
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from '@components'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import clsx from 'clsx'
 import { _projectTag } from '../styles/tag.css'
@@ -14,6 +15,7 @@ interface HeaderProps {
   }
   tag?: string[]
   lang?: string
+  isPreview: boolean
 }
 
 export const FullHeader: React.FC<HeaderProps> = ({
@@ -21,6 +23,7 @@ export const FullHeader: React.FC<HeaderProps> = ({
   headerImage,
   tag,
   lang = 'en',
+  isPreview,
 }) => {
   const { scrollY } = useScroll()
   const Y = useTransform(scrollY, [0, 2000], [0, 1000])
@@ -84,11 +87,13 @@ export const FullHeader: React.FC<HeaderProps> = ({
           alt={title}
           fill
           objectFit='cover'
-          quality={100}
-          placeholder='blur'
+          // quality={100}
+          // placeholder='blur'
           blurDataURL={
             'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
           }
+          // unoptimized={isPreview}
+          unoptimized
         />
       </motion.div>
       <div className='absolute h-80 w-screen bg-gradient-to-t from-background to-background/0'></div>

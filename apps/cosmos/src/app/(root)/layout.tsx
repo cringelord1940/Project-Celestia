@@ -1,6 +1,6 @@
-// import { getServerSession } from 'next-auth'
+import { getServerSession } from 'next-auth'
 import { getProviders } from 'next-auth/react'
-// import { authOptions } from '@backend/auth'
+import { authOptions } from '@backend/auth'
 import { RootLayout } from '@/layouts'
 
 export default async function Layout({
@@ -9,10 +9,10 @@ export default async function Layout({
   children: React.ReactNode
 }) {
   const providers = await getProviders()
-  // const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions)
   return (
     <>
-      <RootLayout session={null} providers={providers}>
+      <RootLayout session={session} providers={providers}>
         {children}
       </RootLayout>
     </>

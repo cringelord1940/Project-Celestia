@@ -15,9 +15,15 @@ interface HeaderProps {
       mimeType?: string
     }[]
   }
+  isPreview: boolean
 }
 
-export const Header: React.FC<HeaderProps> = ({ header, title, tag }) => {
+export const Header: React.FC<HeaderProps> = ({
+  header,
+  title,
+  tag,
+  isPreview,
+}) => {
   switch (header.selectHeaderType) {
     case PROJECT.HEADER.FULL:
       return (
@@ -26,6 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ header, title, tag }) => {
           headerImage={header.headerGallery[0]}
           tag={tag}
           lang='th'
+          isPreview={isPreview}
         />
       )
 

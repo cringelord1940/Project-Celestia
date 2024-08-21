@@ -15,7 +15,7 @@ declare module 'next-auth' {
     user: {
       id: string
       role: 'USER' | 'ADMIN' | 'SUPER_ADMIN'
-      plane: 'FREE' | 'PLUS' | 'PRO' | 'ELITE'
+      plan: 'FREE' | 'PLUS' | 'PRO' | 'ELITE'
       balance: number
       metadata: any
     } & DefaultSession['user']

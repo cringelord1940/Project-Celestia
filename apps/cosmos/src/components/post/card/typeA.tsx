@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from '@components'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -53,7 +54,7 @@ const Card = ({
           initial={{ visibility: 'hidden', y: 50, opacity: 0 }}
           animate={{ visibility: 'visible', y: 0, opacity: 1 }}
           transition={{ delay: 0.5 + i * 0.12 }}
-          className=' relative h-full w-full'
+          className='relative h-full w-full'
         >
           <AnimatePresence>
             {hover && (
@@ -123,6 +124,7 @@ const Card = ({
             objectFit='cover'
             fill
             className='relative h-full w-full'
+            unoptimized
           />
           {/* <div className='relative h-full w-full bg-green-500' /> */}
         </motion.div>

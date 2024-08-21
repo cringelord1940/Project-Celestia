@@ -77,8 +77,11 @@ export const generateMetadata = async ({
 
 async function Page({
   params: { slug },
-  searchParams: { preview },
+  // searchParams: { preview },
 }: PageProps) {
+  // TODO: Fix image optimization
+  const preview: string = 'true'
+
   const data: GetProjectResult = await getProject(slug, preview === 'true')
 
   if (data.status === FETCH.ERROR) {
@@ -109,6 +112,7 @@ async function Page({
           header={project.header}
           title={project.title}
           tag={project.tag}
+          isPreview={preview === 'true'}
         />
         <ContentLayout>
           <ProjectInfo projectInfo={project.projectInfo} />

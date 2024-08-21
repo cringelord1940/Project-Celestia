@@ -8,10 +8,7 @@ import { GridBlock } from './grid'
 import { MarqueeBlock } from './marquee'
 import { QuoteBlock } from './quote'
 
-export const renderBlock = (
-  block: ProjectBlock.Block,
-  isPreview: boolean,
-) => {
+export const renderBlock = (block: ProjectBlock.Block, isPreview: boolean) => {
   switch (block.blockType) {
     case PROJECT.BLOCK_TYPE.CONTENT:
       return <ContentBlock content={block as ProjectBlock.ContentBlock} />

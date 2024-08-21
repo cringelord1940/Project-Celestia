@@ -13,7 +13,7 @@ import { Icon } from '@nexel/cosmos/assets'
 import { navAnimationConfig, iconAnimationConfig } from './animations/config'
 import { UserInfo } from './user'
 import { NavAction } from './action'
-import { DynamicNavModules } from './dynamic'
+import { DynamicNavModules, UserModules } from './dynamic'
 
 interface NavbarProps {
   session: Session | null
@@ -183,7 +183,7 @@ export const NavBar: React.FC<NavbarProps> = ({ session, providers }) => {
                       'w-full flex-col [&>div]:my-2 [&>div]:w-full',
                   )}
                 >
-                  <motion.div
+                  {/* <motion.div
                     className='cursor-pointer'
                     animate={iconAnimation.animate}
                     whileHover={iconAnimation.whileHover}
@@ -193,7 +193,7 @@ export const NavBar: React.FC<NavbarProps> = ({ session, providers }) => {
                     }}
                   >
                     <Icon.Settings />
-                  </motion.div>
+                  </motion.div> */}
                   <motion.div
                     className='cursor-pointer'
                     animate={iconAnimation.animate}
@@ -235,6 +235,12 @@ export const NavBar: React.FC<NavbarProps> = ({ session, providers }) => {
                   </motion.div>
                 </motion.div>
               </div>
+              <UserModules
+                session={session}
+                _nav={_nav}
+                _onToggleNavAction={_onToggleNavAction}
+                _setCursor={_setCursor}
+              />
               <DynamicNavModules _nav={_nav} _setCursor={_setCursor} />
             </motion.div>
           </motion.div>

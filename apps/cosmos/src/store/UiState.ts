@@ -20,6 +20,7 @@ export enum NAV_ACTION {
   USER = 'user',
   WALLET = 'wallet',
   MENU_CANVAS = 'menu_canvas',
+  DYNAMIC_NAVBAR_MENU = 'dyn_nav_mobile',
 }
 
 export enum FOOTER {
