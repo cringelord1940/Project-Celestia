@@ -82,7 +82,10 @@ async function Page({
   // TODO: Fix image optimization
   const preview: string = 'true'
 
-  const data: GetPostResult = await getPost(slug, preview === 'true')
+  const data: GetPostResult = await getPost(
+    { slug, locales: 'en' },
+    preview === 'true',
+  )
 
   if (data.status === FETCH.ERROR) {
     return (

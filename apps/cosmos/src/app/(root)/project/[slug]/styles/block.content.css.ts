@@ -27,14 +27,16 @@ export const _blockContent = css`
       font-size: 1.875rem /* 30px */;
       line-height: 2.25rem /* 36px */;
       font-weight: 600;
+      margin-bottom: 1.5rem /* 24px */;
       &:not(:first-child) {
         padding-top: 4rem;
       }
     }
     p {
-      margin-top: 1.5rem /* 24px */;
+      margin-top: 0.25rem;
       font-weight: 300;
       opacity: 0.8;
+      text-indent: 3rem /* 48px */;
       & + p:not(:first-child) {
         padding-top: 0rem;
       }

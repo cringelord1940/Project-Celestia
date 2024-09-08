@@ -32,5 +32,9 @@ export const useUiState = create<UiState>((set, get) => ({
   onToggleAudio: () => set({ audio: !get().audio }),
   dynamicNav: [],
   setDynamicNav: (dynModules) => set({ dynamicNav: dynModules }),
+  addDynamicNav: (dynModule) => {
+    const { dynamicNav } = get()
+    set({ dynamicNav: [...dynamicNav, dynModule] })
+  },
   onClearDynamicNav: () => set({ dynamicNav: [] }),
 }))

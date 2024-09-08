@@ -66,5 +66,6 @@ export interface UiState {
   onToggleAudio: () => void
   dynamicNav: DynamicNavModule[] | []
   setDynamicNav: (dynModules: DynamicNavModule[] | []) => void
+  addDynamicNav: (dynModule: DynamicNavModule) => void
   onClearDynamicNav: () => void
 }

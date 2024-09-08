@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 async function Page() {
-  const data = await getPosts()
+  const data = await getPosts({ locales: 'en' })
 
   if (data.status === FETCH.ERROR) {
     console.log(data)

@@ -7,11 +7,11 @@ import { FETCH } from '@/enums'
 
 // import { MockProject } from '@/mocks/project.mock'
 
-const getProject: GetProject = async (slug, isPreview) => {
+const getProject: GetProject = async ({ slug, locales = 'en' }, isPreview) => {
   try {
     const requestQL = gql`
       query Project($slug: String!) {
-        project(where: { slug: $slug }) {
+        project(where: { slug: $slug }, locales: ${locales}) {
           title
           slug
           id
@@ -46,10 +46,21 @@ const getProject: GetProject = async (slug, isPreview) => {
           }
           projectInfo {
             infoType
+            client
+            clientUrl
+            team
+            teamUrl
+            appType
+            appTarget
             services
             industry
+            location
+            locationMap {
+              latitude
+              longitude
+            }
             date
-            client
+            releaseDate
           }
           blocks {
             ... on Content {

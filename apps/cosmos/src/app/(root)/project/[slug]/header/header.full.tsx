@@ -76,7 +76,7 @@ export const FullHeader: React.FC<HeaderProps> = ({
         <motion.h1
           initial={{ y: 300, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className='mb-12 mt-1 text-3xl font-bold md:mt-0 md:text-7xl 2xl:text-8xl'
+          className='mb-12 mt-1 text-5xl font-bold sm:text-6xl md:mt-0 md:text-7xl 2xl:text-8xl'
         >
           {title}
         </motion.h1>

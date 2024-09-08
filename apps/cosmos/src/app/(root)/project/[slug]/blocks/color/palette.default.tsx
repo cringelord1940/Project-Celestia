@@ -11,9 +11,9 @@ export const DefaultColorPalette: React.FC<ColorBlockProps> = ({
           key={i}
           style={{ backgroundColor: color.hex }}
         >
-          <div>
+          <div style={{ color: color.textColor || 'black' }}>
             <button>{color.hex}</button>
-            <p style={{ color: color.textColor || 'black' }}>{color.name}</p>
+            <p>{color.name}</p>
           </div>
         </div>
       ))}

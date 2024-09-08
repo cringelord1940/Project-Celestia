@@ -8,7 +8,7 @@ export interface ProjectInfoProps {
 
 export const ProjectInfo: React.FC<ProjectInfoProps> = ({ projectInfo }) => {
   switch (projectInfo.infoType) {
-    case PROJECT.INFO.INLINE_GRID:
+    case PROJECT.INFO_TYPE.INLINE_GRID:
       return <InlineGridInfo projectInfo={projectInfo} />
     default:
       return null

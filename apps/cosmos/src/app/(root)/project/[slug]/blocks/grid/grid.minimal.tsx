@@ -5,8 +5,10 @@ export const MinimalGrid: React.FC<GridBlockProps> = ({ grid }) => {
     <div className='container my-[6rem] grid grid-cols-1 px-32 md:grid-cols-3'>
       {grid.title && (
         <>
-          <div className='bg-background-deep/30 flex aspect-square w-full flex-col items-center justify-center border border-primary'>
-            <h3 className='text-3xl font-bold text-primary'>{grid.title}</h3>
+          <div className='bg-background-deep/30 flex aspect-square w-full flex-col items-center justify-center border border-primary md:p-6'>
+            <h3 className='text-center text-3xl font-bold text-primary'>
+              {grid.title}
+            </h3>
           </div>
         </>
       )}

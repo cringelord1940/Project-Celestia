@@ -1,3 +1,4 @@
+import type { Locales } from './i18n'
 import type { Post } from './post'
 import { FETCH } from '@/enums'
 
@@ -12,6 +13,6 @@ export type GetPostResult =
     }
 
 export type GetPost = (
-  slug: string,
+  variable: { slug: string; locales?: Locales },
   isPreview?: boolean,
 ) => Promise<GetPostResult>

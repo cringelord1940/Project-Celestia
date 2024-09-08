@@ -16,8 +16,15 @@ export enum HEADER {
   OVERLAP = 'OVERLAP',
 }
 
-export enum INFO {
+export enum INFO_TYPE {
   INLINE_GRID = 'INLINE_GRID',
+}
+
+export enum INFO_APP_TARGET {
+  DESKTOP = 'DESKTOP',
+  MOBILE = 'MOBILE',
+  CROSS_PLATFORM = 'CROSS_PLATFORM',
+  WEB_APP = 'WEB_APP',
 }
 
 export enum BLOCK_TYPE {

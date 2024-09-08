@@ -82,7 +82,10 @@ async function Page({
   // TODO: Fix image optimization
   const preview: string = 'true'
 
-  const data: GetProjectResult = await getProject(slug, preview === 'true')
+  const data: GetProjectResult = await getProject(
+    { slug, locales: 'en' },
+    preview === 'true',
+  )
 
   if (data.status === FETCH.ERROR) {
     return (
@@ -107,6 +110,7 @@ async function Page({
         tagline={project.tagline}
         slug={project.slug}
         coverImage={project.coverImage}
+        website={project.website}
       >
         <Header
           header={project.header}
@@ -115,12 +119,16 @@ async function Page({
           isPreview={preview === 'true'}
         />
         <ContentLayout>
-          <ProjectInfo projectInfo={project.projectInfo} />
+          {project.projectInfo && (
+            <ProjectInfo projectInfo={project.projectInfo} />
+          )}
           <Blocks blocks={project.blocks} isPreview={preview === 'true'} />
-          <RelatedProjects
-            projects={project.relatedProjects}
-            isPreview={preview === 'true'}
-          />
+          {project.relatedProjects.length !== 0 && (
+            <RelatedProjects
+              projects={project.relatedProjects}
+              isPreview={preview === 'true'}
+            />
+          )}
         </ContentLayout>
       </Layout>
     </>

@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 async function Page() {
-  const data = await getProjects()
+  const data = await getProjects({ locales: 'en' })
 
   if (data.status === FETCH.ERROR) {
     return (

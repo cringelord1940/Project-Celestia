@@ -1,14 +1,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import type { Locales } from '@types'
 import { gql } from 'graphql-request'
 import { useFetchQL } from '@nexel/nextjs/libs/hooks/data'
 import { env } from '@env'
 import { FETCH } from '@/enums'
 
-const getProjects = async () => {
+const getProjects = async (
+  { locales }: { locales: Locales } = { locales: 'en' },
+) => {
   try {
     const requestQL = gql`
       {
-        projects {
+        projects(locales: ${locales}) {
           title
           slug
           featured

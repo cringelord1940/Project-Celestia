@@ -1,3 +1,4 @@
+import type { Locales } from './i18n'
 import type { Project } from './project'
 import { FETCH } from '@/enums'
 
@@ -12,6 +13,6 @@ export type GetProjectResult =
     }
 
 export type GetProject = (
-  slug: string,
+  variable: { slug: string; locales?: Locales },
   isPreview?: boolean,
 ) => Promise<GetProjectResult>

@@ -1,14 +1,23 @@
 import type { Block } from './project.blocks'
 import { PROJECT } from '@/enums'
 export * as ProjectBlock from './project.blocks'
+
 export * from './project.utils'
 
 export type ProjectInfo = {
-  infoType: `${PROJECT.INFO}`
-  services: string
-  industry: string
-  date: string
-  client: string
+  infoType: `${PROJECT.INFO_TYPE}`
+  client: string | null
+  clientUrl: string | null
+  team: string | null
+  teamUrl: string | null
+  appType: string | null
+  appTarget: `${PROJECT.INFO_APP_TARGET}` | null
+  services: string | null
+  industry: string | null
+  location: string | null
+  locationMap: string | null
+  date: string | null
+  releaseDate: string | null
 }
 
 export type RelatedProject = {
@@ -62,7 +71,7 @@ export type Project = {
       mimeType?: string
     }[]
   }
-  projectInfo: ProjectInfo
+  projectInfo: ProjectInfo | null
   blocks: Block[]
   relatedProjects: RelatedProject[]
 }

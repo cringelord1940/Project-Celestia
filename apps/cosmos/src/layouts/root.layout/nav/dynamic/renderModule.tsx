@@ -1,5 +1,10 @@
 import { DynamicNavModule, NAV_DYN_TYPE, CURSOR } from '@/store'
-import { BackModule, ScrollProgressModule, ShareModule } from './modules'
+import {
+  BackModule,
+  ScrollProgressModule,
+  ShareModule,
+  External_linkModule,
+} from './modules'
 
 interface renderModuleProps {
   module: DynamicNavModule
@@ -28,19 +33,19 @@ export const RenderModule: React.FC<renderModuleProps> = ({
     case NAV_DYN_TYPE.BACK:
       return (
         <>
-          <BackModule
-            _setCursor={_setCursor}
-            dataState={module}
-          />
+          <BackModule _setCursor={_setCursor} dataState={module} />
         </>
       )
     case NAV_DYN_TYPE.SHARE:
       return (
         <>
-          <ShareModule
-            _setCursor={_setCursor}
-            dataState={module}
-          />
+          <ShareModule _setCursor={_setCursor} dataState={module} />
+        </>
+      )
+    case NAV_DYN_TYPE.EXTERNAL_LINK:
+      return (
+        <>
+          <External_linkModule _setCursor={_setCursor} dataState={module} />
         </>
       )
     default:

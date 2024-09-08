@@ -15,13 +15,6 @@ function Extend(Plugins?: PluginsConfig) {
       './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
-      container: {
-        center: true,
-        padding: '2rem',
-        screens: {
-          '2xl': '1400px',
-        },
-      },
       screens: {
         sm: '480px',
         md: '768px',

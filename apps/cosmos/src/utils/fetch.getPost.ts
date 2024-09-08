@@ -6,12 +6,12 @@ import { env } from '@env'
 import { FETCH } from '@/enums'
 // import { MockPost } from '@/mocks/post.mock'
 
-export const getPost: GetPost = async (slug, isPreview) => {
+export const getPost: GetPost = async ({ slug, locales = 'en' }, isPreview) => {
   const endpointURL = env.GRAPHQL_POST_URL
   try {
     const requestQL = gql`
       query Post($slug: String!) {
-        post(where: { slug: $slug }) {
+        post(where: { slug: $slug }, locales: ${locales}) {
           title
           tag
           slug

@@ -222,6 +222,14 @@ canvas {
   width: 2px;
 }
 
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 2rem;
+  max-width: 1400px;
+}
+
 /* *! Animate */
 
 .Anim {

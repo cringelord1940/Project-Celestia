@@ -6,6 +6,7 @@ export type {
   DynamicNavProgress,
   DynamicNavBack,
   DynamicNavShare,
+  DynamicNavExternal_link
 } from './UiState.DynNav'
 export { useAppState } from './app.store'
 export { useUserState } from './user.store'

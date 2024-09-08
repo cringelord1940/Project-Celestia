@@ -56,6 +56,7 @@ import {
   TbSubtask,
   TbProgressCheck,
   TbTimelineEventText,
+  TbExternalLink,
 } from 'react-icons/tb'
 import {
   PiSunBold,
@@ -161,6 +162,7 @@ export const Wallet = PiWalletBold
 export const Queue = PiQueue
 export const Link = TbLink
 export const Unlink = TbUnlink
+export const ExternalLink = TbExternalLink
 
 export const ZoomScan = TbZoomScan
 
